@@ -1,0 +1,12 @@
+<events>
+
+	<event id="onMenuButtons" type="sound" sound="menu_button"/>
+	<event id="onToaChoice" type="sound" sound="toa_choice"/>
+	<event id="onBannerUIButons" type="sound" sound="button_click"/>
+	<event id="onBoostButtons" type="sound" sound="click"/>
+	<event id="onEquipItem" type="sound" sound="click4"/>
+	
+	<event id="onMusicExploration" type="music" music="exploration"/>
+	<event id="onMusicFight" type="music" music="fight"/>
+		
+</events>
