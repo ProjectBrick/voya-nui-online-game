@@ -119,16 +119,16 @@ var xmlFindNode = function(node, nodeName) {
 };
 
 // UI styles.
-var colorName = 0xFFFFFFFF;
-var colorGlow = 0xFF333333;
 var colorHead = 0xFF000000;
 var colorLink = 0xFF000000;
-var colorText = 0xFF999999;
 var colorEdit = 0xFF000000;
 var colorBack = 0xFF999999;
 var colorLine = 0xFF444444;
 var colorOver = 0xC0000000;
 var boxStroke = 4;
+var nameColorFill = 0xFFFFFFFF;
+var nameColorStroke = 0xFF333333;
+var nameColorSpread = 6;
 
 // UI layers.
 var menuLayer = 1;
@@ -575,41 +575,57 @@ var setupMenu = function() {
 		};
 	};
 	var title = function() {
-		var title = menu.createEmptyMovieClip("title", 1);
-		var titleText = newTextField(
-			title, "text", 1, 0, 0, WIDTH, -1, "center"
-		);
-		titleText._x = 0;
-		titleText._y = 120;
-		titleText._alpha = colorA(colorName);
-		titleText.selectable = false;
-		titleText.text = Array(
+		var text = Array(
 			"Voya Nui Online Game"
 		).join("\n").toUpperCase();
-		titleText.embedFonts = true;
-		var titleTextFmt = new TextFormat();
-		titleTextFmt.font = "font_trademarker_light";
-		titleTextFmt.size = 40;
-		titleTextFmt.align = "center";
-		titleTextFmt.color = colorRGB(colorName);
-		titleText.setTextFormat(titleTextFmt);
-		var filters = [];
-		for (var i = 0; i < 4; i++) {
-			filters.push(new flash.filters.DropShadowFilter(
-				2,
-				45 + (90 * i),
-				colorRGB(colorGlow),
-				colorA(colorGlow) / 100,
-				2,
-				2,
-				10,
-				3,
-				false,
-				false,
-				false
-			));
+
+		var title = menu.createEmptyMovieClip("title", 1);
+		title._x = 0;
+		title._y = 120;
+
+		var titleFillFmt = new TextFormat();
+		titleFillFmt.font = "font_trademarker_light";
+		titleFillFmt.size = 40;
+		titleFillFmt.align = "center";
+		titleFillFmt.color = colorRGB(nameColorFill);
+
+		var titleStrokeFmt = new TextFormat();
+		titleStrokeFmt.font = titleFillFmt.font;
+		titleStrokeFmt.size = titleFillFmt.size;
+		titleStrokeFmt.align = titleFillFmt.align;
+		titleStrokeFmt.color = colorRGB(nameColorStroke);
+
+		// Fake a stroke by drawing text multiple times.
+		// Could be done with multiple flash.filters.DropShadowFilter.
+		// However these filters scale inconsistently based on DPX.
+		// Draw each corner and side (8) with some anti-aliasing (2).
+		// A little bit expensive to redraw, so use runtime caching.
+		var titleStroke = title.createEmptyMovieClip("stroke", 1);
+		titleStroke._alpha = colorA(nameColorStroke);
+		var steps = nameColorSpread * 8 * 2;
+		for (var i = 0; i < steps; i++) {
+			var txt = newTextField(
+				titleStroke, "text_" + i, i, 0, 0, WIDTH, -1, "center"
+			);
+			var deg = 360 * (i / steps);
+			txt._x = Math.sin(deg) * nameColorSpread;
+			txt._y = Math.cos(deg) * nameColorSpread;
+			txt.selectable = false;
+			txt.text = text;
+			txt.embedFonts = true;
+			txt.setTextFormat(titleStrokeFmt);
 		}
-		titleText.filters = filters;
+		titleStroke.cacheAsBitmap = true;
+
+		// Draw the fill text.
+		var titleFill = newTextField(
+			title, "fill", 2, 0, 0, WIDTH, -1, "center"
+		);
+		titleFill._alpha = colorA(nameColorFill);
+		titleFill.selectable = false;
+		titleFill.text = text;
+		titleFill.embedFonts = true;
+		titleFill.setTextFormat(titleFillFmt);
 	};
 	var buttons = function() {
 		var wide = 400;
