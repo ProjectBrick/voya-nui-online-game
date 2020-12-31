@@ -36,6 +36,7 @@ const {
 	SourceDir
 } = require('./util/sources');
 const {Server} = require('./util/server');
+const docsMapGenerator = require('./docs/map/generator');
 const {
 	version,
 	author,
@@ -174,6 +175,9 @@ async function readSourcesFiltered(each) {
 
 async function addDocs(dir) {
 	const template = await fse.readFile('docs/template.html', 'utf8');
+	const mapHtml = await docsMapGenerator.generate({
+		style: 'display: block; max-width: 100%; height: auto; margin: 0 auto;'
+	});
 	await Promise.all((await fse.readdir('docs'))
 		.filter(f => /^[^\.].*\.md$/i.test(f))
 		.map(f => fse.readFile(`docs/${f}`, 'utf8').then(src => {
@@ -190,7 +194,7 @@ async function addDocs(dir) {
 				templateStrings(template, {
 					title,
 					body
-				})
+				}).replace(/<!--{MAP}-->/g, mapHtml)
 			);
 		}))
 	);
