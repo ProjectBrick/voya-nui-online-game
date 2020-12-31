@@ -69,7 +69,7 @@ async function shockpkgFile(pkg) {
 }
 
 function templateStrings(str, vars) {
-	return str.replace(/\$\{([^\}]*)?\}/g, (_, p1) => {
+	return str.replace(/\$\{([^\}]*?)\}/g, (_, p1) => {
 		if (!vars.hasOwnProperty(p1)) {
 			throw new Error(`Undefined template variable: ${p1}`);
 		}
@@ -172,10 +172,6 @@ async function readSourcesFiltered(each) {
 	});
 }
 
-async function addLicense(dir) {
-	await fse.copy('LICENSE.txt', `${dir}/LICENSE.txt`);
-}
-
 async function addDocs(dir) {
 	const template = await fse.readFile('docs/template.html', 'utf8');
 	await Promise.all((await fse.readdir('docs'))
@@ -187,7 +183,7 @@ async function addDocs(dir) {
 				smartypants: true
 			}).trim();
 			const title = (
-				body.match(/<h\d[^>]*>([\s\S]*)?<\/h\d>/) || []
+				body.match(/<h\d[^>]*>([\s\S]*?)<\/h\d>/) || []
 			)[1] || '';
 			return fse.writeFile(
 				`${dir}/${f}`.replace(/\.md$/i, '.html'),
@@ -251,7 +247,7 @@ async function makeExe(target, source, id, name, file, exe) {
 		Version: version,
 		Publisher: author,
 		Copyright: copyright,
-		License: `${source}/LICENSE.txt`,
+		License: 'LICENSE.txt',
 		Icon: resIcon,
 		WizardImageHeader: `${resHeaders}/*.bmp`,
 		WizardImageSidebar: `${resSidebars}/*.bmp`,
@@ -261,7 +257,9 @@ async function makeExe(target, source, id, name, file, exe) {
 		OutFile: path.basename(target).replace(/\.exe$/i, ''),
 		Source: `${source}/*`,
 		ArchitecturesInstallIn64BitMode: '',
-		ArchitecturesAllowed: ''
+		ArchitecturesAllowed: '',
+		ReadMeName: `${name} - README`,
+		ReadMeFile: 'README.html'
 	};
 	await innosetupP('innosetup.iss', {
 		gui: false,
@@ -413,7 +411,6 @@ async function buildBrowser(dir, nested) {
 		);
 	}
 	await addDocs(dest);
-	await addLicense(dest);
 }
 
 async function buildWindows(dir, pkg) {
@@ -421,7 +418,6 @@ async function buildWindows(dir, pkg) {
 	await fse.remove(dest);
 	await bundle(await createBundleWindows(`${dest}/${appName}.exe`), pkg);
 	await addDocs(dest);
-	await addLicense(dest);
 }
 
 async function buildMac(dir, pkg) {
@@ -429,7 +425,6 @@ async function buildMac(dir, pkg) {
 	await fse.remove(dest);
 	await bundle(await createBundleMac(`${dest}/${appName}.app`), pkg);
 	await addDocs(dest);
-	await addLicense(dest);
 }
 
 async function buildLinux32(dir, pkg) {
@@ -437,7 +432,6 @@ async function buildLinux32(dir, pkg) {
 	await fse.remove(dest);
 	await bundle(await createBundleLinux32(`${dest}/${appName}`), pkg);
 	await addDocs(dest);
-	await addLicense(dest);
 }
 
 async function buildLinux64(dir, pkg) {
@@ -445,7 +439,6 @@ async function buildLinux64(dir, pkg) {
 	await fse.remove(dest);
 	await bundle(await createBundleLinux64(`${dest}/${appName}`), pkg);
 	await addDocs(dest);
-	await addLicense(dest);
 }
 
 async function server(dir) {
@@ -570,22 +563,22 @@ task('dist:mac:dmg', async () => {
 		},
 		contents: [
 			{
-				x: (width / 2) + 160,
-				y: 108,
-				type: 'link',
-				path: '/Applications'
-			},
-			{
 				x: (width / 2) - 160,
 				y: 108,
 				type: 'file',
 				path: `build/mac/${appName}.app`
 			},
 			{
+				x: (width / 2) + 160,
+				y: 108,
+				type: 'link',
+				path: '/Applications'
+			},
+			{
 				x: (width / 2),
 				y: 364,
 				type: 'file',
-				path: 'build/mac/LICENSE.txt'
+				path: 'build/mac/README.html'
 			}
 		]
 	});
