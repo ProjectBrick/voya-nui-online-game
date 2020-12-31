@@ -7,5 +7,2873 @@
 	</head>
 	<body>
 <h1 id="voya-nui-online-game--readme">Voya Nui Online Game – README</h1>
+<h2 id="debug-keys">Debug Keys</h2>
+<p>Press the following debug key combinations to use debug command.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Key Combination</th>
+<th align="left">Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>1</kbd></td>
+<td align="left">Toggle grid.</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>2</kbd></td>
+<td align="left">Toggle transparent characters.</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>'</kbd></td>
+<td align="left">Toggle <a href="#debug-console">debug console</a>.</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>`</kbd></td>
+<td align="left">Toggle <a href="#debug-console">debug console</a>.</td>
+</tr>
+</tbody></table>
+<h2 id="debug-console">Debug Console</h2>
+<p>In the debug console, the following commands can be entered.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>fps</code></td>
+<td align="left">Toggle the FPS counter.</td>
+</tr>
+<tr>
+<td align="left"><code>core</code></td>
+<td align="left">Enter module: <a href="#module-core"><code>core</code></a>.</td>
+</tr>
+<tr>
+<td align="left"><code>ui</code></td>
+<td align="left">Enter module: <a href="#module-ui"><code>ui</code></a>.</td>
+</tr>
+<tr>
+<td align="left"><code>audio</code></td>
+<td align="left">Enter module: <a href="#module-audio"><code>audio</code></a>.</td>
+</tr>
+<tr>
+<td align="left"><code>worker</code></td>
+<td align="left">Enter module: <a href="#module-worker"><code>worker</code></a>.</td>
+</tr>
+<tr>
+<td align="left"><code>..</code></td>
+<td align="left">Exit current module.</td>
+</tr>
+</tbody></table>
+<h3 id="module-core">Module: <code>core</code></h3>
+<p>This module contains the following debug commands:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>info</code></td>
+<td align="left">Shows Web Service Path, Asset Path, and Chapters Available.</td>
+</tr>
+<tr>
+<td align="left"><code>where</code></td>
+<td align="left">Shows character name, map number, cell number, and the number of monsters.</td>
+</tr>
+<tr>
+<td align="left"><code>build</code></td>
+<td align="left">Shows the build number.</td>
+</tr>
+<tr>
+<td align="left"><code>anim name</code></td>
+<td align="left">Play the specified player <a href="#animations">animation <code>name</code></a>.</td>
+</tr>
+<tr>
+<td align="left"><code>skin id</code></td>
+<td align="left">Change player skin to <a href="#sprites">sprite <code>id</code></a> (not all skins have all animations).</td>
+</tr>
+<tr>
+<td align="left"><code>nextstep</code></td>
+<td align="left">Skip to next quest.</td>
+</tr>
+<tr>
+<td align="left"><code>onemorenight</code></td>
+<td align="left">Adds 1 to chapters available (all chapters are already available).</td>
+</tr>
+<tr>
+<td align="left"><code>step id</code></td>
+<td align="left">Move to corresponding <a href="#quests">quest <code>id</code></a>.</td>
+</tr>
+<tr>
+<td align="left"><code>chapter id</code></td>
+<td align="left">Move to corresponding <a href="#chapters">chapter <code>id</code></a>.</td>
+</tr>
+<tr>
+<td align="left"><code>god</code></td>
+<td align="left">Toggle monsters will attack.</td>
+</tr>
+<tr>
+<td align="left"><code>script name</code></td>
+<td align="left">Run the specified <a href="#scripts">script <code>name</code></a>.</td>
+</tr>
+<tr>
+<td align="left"><code>cancel</code></td>
+<td align="left">Abandon fight.</td>
+</tr>
+<tr>
+<td align="left"><code>pieceofcake</code></td>
+<td align="left">Add to inventory 1 Life Stone, 1 Nui Blaster, 1 Medium Attack Greaves of Air, 1 Medium Attack Armor of Air, 1 Attack Noble Kanohi of Air, 1 Thok Key, and 3 Hidden Caves Keys.</td>
+</tr>
+<tr>
+<td align="left"><code>level number</code></td>
+<td align="left">Increase level to the specified <code>number</code> (<code>1</code>-<code>50</code>).</td>
+</tr>
+<tr>
+<td align="left"><code>move id</code></td>
+<td align="left">Move to specified <a href="#maps">map <code>id</code></a>.</td>
+</tr>
+<tr>
+<td align="left"><code>move x,y</code></td>
+<td align="left">Move to specified <a href="#maps">map <code>x</code> and <code>y</code></a>.</td>
+</tr>
+<tr>
+<td align="left"><code>random a b</code></td>
+<td align="left">Generate random number from <code>a</code> to <code>b-1</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>itemlist</code></td>
+<td align="left">For listing inventory and equipped inventory, not working.</td>
+</tr>
+<tr>
+<td align="left"><code>gimmy</code></td>
+<td align="left">Gives the player 1 of every item in the game.</td>
+</tr>
+<tr>
+<td align="left"><code>equip id</code></td>
+<td align="left">Add to inventory 1 of <a href="#items">item <code>id</code></a>.</td>
+</tr>
+<tr>
+<td align="left"><code>equip id slot</code></td>
+<td align="left">Add to inventory 1 of <a href="#items">item <code>id</code></a> and equip to <code>slot</code> (<code>0</code>: 2nd, <code>1</code>: 3rd, <code>2</code>: 4th).</td>
+</tr>
+<tr>
+<td align="left"><code>spell</code></td>
+<td align="left">Shows the equipped items.</td>
+</tr>
+<tr>
+<td align="left"><code>spell slot</code></td>
+<td align="left">Shows info about item equipped to <code>slot</code> (<code>1</code>: 1st, <code>2</code>: 2nd, <code>3</code>: 3rd, <code>4</code>: 4th).</td>
+</tr>
+<tr>
+<td align="left"><code>spell slot id</code></td>
+<td align="left">Equip to <code>slot</code> (<code>1</code>: 1st, <code>2</code>: 2nd, <code>3</code>: 3rd, <code>4</code>: 4th) a <a href="#spells">spell <code>id</code></a> (not all spells have an icon).</td>
+</tr>
+<tr>
+<td align="left"><code>fight</code></td>
+<td align="left">Toggle between combat and roleplay modes.</td>
+</tr>
+<tr>
+<td align="left"><code>makemerich</code></td>
+<td align="left">Add to inventory 10 of stone, earth, water, ice, fire, and air shards.</td>
+</tr>
+</tbody></table>
+<h3 id="module-ui">Module: <code>ui</code></h3>
+<p>This module contains the following debug commands:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>msgbox text title</code></td>
+<td align="left">Show a message dialog with the specified <code>text</code> and <code>title</code>.</td>
+</tr>
+<tr>
+<td align="left"><code>msg text type</code></td>
+<td align="left">Show message the the specified <code>text</code> and <code>type</code> (1: white, 2: red).</td>
+</tr>
+<tr>
+<td align="left"><code>sa id name</code></td>
+<td align="left">Set sprite animation command <a href="#sprites">sprite <code>id</code></a> and <a href="#animations">animation <code>name</code></a>.</td>
+</tr>
+<tr>
+<td align="left"><code>open name</code></td>
+<td align="left">Open specified menu <code>name</code> (<code>MainMenu</code>, <code>Banner</code>, <code>Cinematic</code>, <code>ChooseCharacter</code>, <code>Timeline</code>, <code>Map</code>, <code>Quests</code>, <code>CenterText</code>, <code>InventoryStats</code>, <code>Dialog</code>).</td>
+</tr>
+<tr>
+<td align="left"><code>hb button</code></td>
+<td align="left">Highlight <code>button</code> (<code>1</code>-<code>3</code>).</td>
+</tr>
+</tbody></table>
+<h3 id="module-audio">Module: <code>audio</code></h3>
+<p>This module contains the following debug commands:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Command</th>
+<th align="left">Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>sound name</code></td>
+<td align="left">Play <a href="#audio-sounds">sound <code>name</code></a>.</td>
+</tr>
+<tr>
+<td align="left"><code>event name</code></td>
+<td align="left">Play <a href="#audio-events">event <code>name</code></a>.</td>
+</tr>
+</tbody></table>
+<h3 id="module-worker">Module: <code>worker</code></h3>
+<p>This module has no debug commands.</p>
+<h3 id="maps">Maps</h3>
+<!--{MAP}-->
+
+
+<h4 id="useful-locations">Useful Locations</h4>
+<table>
+<thead>
+<tr>
+<th align="left">ID</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>24</code></td>
+<td align="left">Protodermis Lake</td>
+</tr>
+<tr>
+<td align="left"><code>92</code></td>
+<td align="left">Lagoon (starting spot)</td>
+</tr>
+<tr>
+<td align="left"><code>119</code></td>
+<td align="left">Cave Entrance</td>
+</tr>
+<tr>
+<td align="left"><code>180</code></td>
+<td align="left">Garan’s Hideout</td>
+</tr>
+<tr>
+<td align="left"><code>250</code></td>
+<td align="left">Matoran Santuary</td>
+</tr>
+<tr>
+<td align="left"><code>283</code></td>
+<td align="left">Piraka Fortress</td>
+</tr>
+<tr>
+<td align="left"><code>409</code></td>
+<td align="left">Chamber of Truth Entrance</td>
+</tr>
+<tr>
+<td align="left"><code>411</code></td>
+<td align="left">Chamber of the Mask of Life Entrance</td>
+</tr>
+<tr>
+<td align="left"><code>413</code></td>
+<td align="left">Lava Dam Station</td>
+</tr>
+<tr>
+<td align="left"><code>479</code></td>
+<td align="left">Matoran Fortress</td>
+</tr>
+<tr>
+<td align="left"><code>515</code></td>
+<td align="left">Black Rocks Entrance</td>
+</tr>
+<tr>
+<td align="left"><code>523</code></td>
+<td align="left">Ussal Crab Cave</td>
+</tr>
+</tbody></table>
+<h3 id="chapters">Chapters</h3>
+<table>
+<thead>
+<tr>
+<th align="left">ID</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>0</code></td>
+<td align="left">Entry of the Lagoon</td>
+</tr>
+<tr>
+<td align="left"><code>1</code></td>
+<td align="left">The Matoran village</td>
+</tr>
+<tr>
+<td align="left"><code>2</code></td>
+<td align="left">The Coasts of Voya Nui</td>
+</tr>
+<tr>
+<td align="left"><code>3</code></td>
+<td align="left">The caves of Voya Nui</td>
+</tr>
+<tr>
+<td align="left"><code>4</code></td>
+<td align="left">The Voya Nui desert</td>
+</tr>
+<tr>
+<td align="left"><code>5</code></td>
+<td align="left">The Black Rocks</td>
+</tr>
+<tr>
+<td align="left"><code>6</code></td>
+<td align="left">The Piraka’s virus factory</td>
+</tr>
+<tr>
+<td align="left"><code>7</code></td>
+<td align="left">The chamber of truth</td>
+</tr>
+<tr>
+<td align="left"><code>8</code></td>
+<td align="left">The Lava Lake and the Chamber of the Mask of Life</td>
+</tr>
+<tr>
+<td align="left"><code>9</code></td>
+<td align="left">The End</td>
+</tr>
+</tbody></table>
+<h3 id="quests">Quests</h3>
+<table>
+<thead>
+<tr>
+<th align="left">ID</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>1</code></td>
+<td align="left">Talk to Garan the Matoran, and answer to his questions.</td>
+</tr>
+<tr>
+<td align="left"><code>2</code></td>
+<td align="left">Garan needs Ice metal pieces. Bring him back five Ice metal pieces by fighting Gafna.</td>
+</tr>
+<tr>
+<td align="left"><code>3</code></td>
+<td align="left">Find the Protodermis lake, and fight the Protodermis Burnak.</td>
+</tr>
+<tr>
+<td align="left"><code>4</code></td>
+<td align="left">Find the hidden objects in the Matoran village.</td>
+</tr>
+<tr>
+<td align="left"><code>5</code></td>
+<td align="left">Fight the Nektann and the Guardian in the main village area.</td>
+</tr>
+<tr>
+<td align="left"><code>6</code></td>
+<td align="left">Escort Garan to the Wasteland</td>
+</tr>
+<tr>
+<td align="left"><code>7</code></td>
+<td align="left">Fight all Nektann and help Garan to leave.</td>
+</tr>
+<tr>
+<td align="left"><code>8</code></td>
+<td align="left">Try to find and defeat Reidak.</td>
+</tr>
+<tr>
+<td align="left"><code>9</code></td>
+<td align="left">Explore the north part of the iced coasts.</td>
+</tr>
+<tr>
+<td align="left"><code>10</code></td>
+<td align="left">Try to locate the Matoran fortress entry and talk to Balta.</td>
+</tr>
+<tr>
+<td align="left"><code>11</code></td>
+<td align="left">Meet Velika at the Matoran fortress in order to find new equipment.</td>
+</tr>
+<tr>
+<td align="left"><code>12</code></td>
+<td align="left">Help the Matoran of the fortress to repair their locating stone.</td>
+</tr>
+<tr>
+<td align="left"><code>13</code></td>
+<td align="left">Battle the Rock Ussal.</td>
+</tr>
+<tr>
+<td align="left"><code>14</code></td>
+<td align="left">Find the entry of the caves of Voya Nui, search who are guarding the entry.</td>
+</tr>
+<tr>
+<td align="left"><code>15</code></td>
+<td align="left">Return talk to Garan.</td>
+</tr>
+<tr>
+<td align="left"><code>16</code></td>
+<td align="left">Rescue a group of Matoran slaves and escort them to the Matoran fortress.</td>
+</tr>
+<tr>
+<td align="left"><code>17</code></td>
+<td align="left">Sabotage the Piraka installations in order to prevent them from finding the Mask of Life.</td>
+</tr>
+<tr>
+<td align="left"><code>18</code></td>
+<td align="left">Find a way to get in a hidden part of the caves that leads to a teleportation platform.</td>
+</tr>
+<tr>
+<td align="left"><code>19</code></td>
+<td align="left">Garan wants to go to his hiding place in order to pick up the big amount of equipment he stocked there. Escort him up to there via desert area along the jungle.</td>
+</tr>
+<tr>
+<td align="left"><code>20</code></td>
+<td align="left">The hidden place of Garan should not be found nor by the Rock Ussal neither by Fikou. If they regroup around the hidden place, it will alert the Piraka. Destroy all the groups of Rock Ussal and Fikou that prowl around.</td>
+</tr>
+<tr>
+<td align="left"><code>21</code></td>
+<td align="left">Garan will need to rebuild his Protodermis stock. Go and ask Kazi at the fortress to help you to bring some Protodermis back.</td>
+</tr>
+<tr>
+<td align="left"><code>22</code></td>
+<td align="left">Explore the surroundings of the black rocks area to find any clue to what’s going on in there.</td>
+</tr>
+<tr>
+<td align="left"><code>23</code></td>
+<td align="left">Find Zaktan near the Lake of Protodermis an try to defeat him.</td>
+</tr>
+<tr>
+<td align="left"><code>24</code></td>
+<td align="left">Attack 4 camps of black Husis and then come back and see Garan.</td>
+</tr>
+<tr>
+<td align="left"><code>27</code></td>
+<td align="left">Locate all the different possible entries to the cave and then come back and see Garan.</td>
+</tr>
+<tr>
+<td align="left"><code>28</code></td>
+<td align="left">Zaktan have decided to besiege and attack the Matoran fortress. Fight against these enemies in order to free the fortress.</td>
+</tr>
+<tr>
+<td align="left"><code>29</code></td>
+<td align="left">Find the Piraka Stronghold, fight the guards at the entry and come back to Garan to make your report.</td>
+</tr>
+<tr>
+<td align="left"><code>30</code></td>
+<td align="left">Find another way to enter the Stronghold.</td>
+</tr>
+<tr>
+<td align="left"><code>31</code></td>
+<td align="left">Use the tamed Burnak to enter the Piraka Stronghold.</td>
+</tr>
+<tr>
+<td align="left"><code>32</code></td>
+<td align="left">Progress in the Piraka Stronghold in order to find the control room and open the launcher store.</td>
+</tr>
+<tr>
+<td align="left"><code>33</code></td>
+<td align="left">Go to the launcher store room and fight against Zaktan.</td>
+</tr>
+<tr>
+<td align="left"><code>34</code></td>
+<td align="left">Locate the Chamber of Truth using the teleportation gate in the boarding area.</td>
+</tr>
+<tr>
+<td align="left"><code>35</code></td>
+<td align="left">Ask Balta to help you to find the key to open the secret passage of the Chamber of Truth.</td>
+</tr>
+<tr>
+<td align="left"><code>36</code></td>
+<td align="left">Fight the Nektann group one after another and fight also the Nektann in the village in order to attract Reidak.</td>
+</tr>
+<tr>
+<td align="left"><code>37</code></td>
+<td align="left">Answer correctly to several questions asked by Vezok in order to be taken to the prison and maybe escape.</td>
+</tr>
+<tr>
+<td align="left"><code>38</code></td>
+<td align="left">Use your tamed Burnak to escape from the jail.</td>
+</tr>
+<tr>
+<td align="left"><code>39</code></td>
+<td align="left">Explore the surroundings of the Lava lake and lava reservoir in order to understand what is going on.</td>
+</tr>
+<tr>
+<td align="left"><code>40</code></td>
+<td align="left">Ask Dalu what the intentions of the Piraka are regarding the lava lake.</td>
+</tr>
+<tr>
+<td align="left"><code>41</code></td>
+<td align="left">Defeat Hakann</td>
+</tr>
+<tr>
+<td align="left"><code>42</code></td>
+<td align="left">Go back to the lava lake.</td>
+</tr>
+<tr>
+<td align="left"><code>43</code></td>
+<td align="left">Enter the Chamber of Life</td>
+</tr>
+<tr>
+<td align="left"><code>45</code></td>
+<td align="left">Go back to meet Garan in the village</td>
+</tr>
+<tr>
+<td align="left"><code>46</code></td>
+<td align="left">Garan can improve your weapon if you find his improvement kit. Go to the north-west edge of Voya Nui, and find it under the rocks.</td>
+</tr>
+<tr>
+<td align="left"><code>47</code></td>
+<td align="left">find them along the coasts.</td>
+</tr>
+<tr>
+<td align="left"><code>48</code></td>
+<td align="left">Velika told you to open the safes in the launcher store of the Matoran village and to take the armor.</td>
+</tr>
+<tr>
+<td align="left"><code>49</code></td>
+<td align="left">Garan has hidden two metal pieces near the lighthouse area. They are under the stones heaps. Dig them up and bring them back to Garan.</td>
+</tr>
+<tr>
+<td align="left"><code>50</code></td>
+<td align="left">A creature is guarding the wood tunnel entry. Escort Garan to this wood tunnel and try to create a diversion in order to allow Garan to reach the other shore safely.</td>
+</tr>
+<tr>
+<td align="left"><code>51</code></td>
+<td align="left">Help Kazi to fill up the container with Protodermis.</td>
+</tr>
+<tr>
+<td align="left"><code>52</code></td>
+<td align="left">Escort Kazi  to Garan Hideout to bring the new Protodermis stock.</td>
+</tr>
+<tr>
+<td align="left"><code>53</code></td>
+<td align="left">Go to the Matoran Fortress and Talk to Piruk</td>
+</tr>
+<tr>
+<td align="left"><code>54</code></td>
+<td align="left">Go to the Piraka Warehouse and destroy all the equipment.</td>
+</tr>
+<tr>
+<td align="left"><code>55</code></td>
+<td align="left">Go to the Matoran Fortress and talk to Velika about carving tools.</td>
+</tr>
+<tr>
+<td align="left"><code>56</code></td>
+<td align="left">Bring back to Velika the Fikou metal pieces.</td>
+</tr>
+<tr>
+<td align="left"><code>57</code></td>
+<td align="left">Go back to Garan’s hidden place.</td>
+</tr>
+<tr>
+<td align="left"><code>58</code></td>
+<td align="left">Go back to the caves, cure the slave and talk to him about the buried equipment (1)</td>
+</tr>
+<tr>
+<td align="left"><code>59</code></td>
+<td align="left">Go back to the caves, cure the slave and talk to him about the buried equipment (2)</td>
+</tr>
+<tr>
+<td align="left"><code>60</code></td>
+<td align="left">Go back to the caves, cure the slave and talk to him about the buried equipment (3)</td>
+</tr>
+<tr>
+<td align="left"><code>61</code></td>
+<td align="left">Find the buried equipment (1)</td>
+</tr>
+<tr>
+<td align="left"><code>62</code></td>
+<td align="left">Find the buried equipment (2)</td>
+</tr>
+<tr>
+<td align="left"><code>63</code></td>
+<td align="left">Find the buried equipment (3)</td>
+</tr>
+<tr>
+<td align="left"><code>70</code></td>
+<td align="left">Bring back the tools to Garan.</td>
+</tr>
+<tr>
+<td align="left"><code>71</code></td>
+<td align="left">Locate an defeat Thok.</td>
+</tr>
+<tr>
+<td align="left"><code>72</code></td>
+<td align="left">Go back to the Matoran Fortress and talk to Balta about the fight against Thok.</td>
+</tr>
+<tr>
+<td align="left"><code>73</code></td>
+<td align="left">Go back to the Matoran Fortress and talk to Piruk</td>
+</tr>
+<tr>
+<td align="left"><code>74</code></td>
+<td align="left">Sabotage the Piraka drilling material</td>
+</tr>
+<tr>
+<td align="left"><code>75</code></td>
+<td align="left">Help Piruk to heal the Tamed Burnak. You can find Life Stone on Fire Gafna, you can find them in the blackrocks. And energy crystal on Lava Ape, further in the south west of Voya Nui</td>
+</tr>
+<tr>
+<td align="left"><code>76</code></td>
+<td align="left">Find the Tamed Burnak.</td>
+</tr>
+<tr>
+<td align="left"><code>77</code></td>
+<td align="left">Bring back to Balta the needed equipment in order to repair the portal.</td>
+</tr>
+<tr>
+<td align="left"><code>78</code></td>
+<td align="left">Go to the Chamber of Truth</td>
+</tr>
+<tr>
+<td align="left"><code>79</code></td>
+<td align="left">Infiltrate the Chamber of Truth</td>
+</tr>
+<tr>
+<td align="left"><code>80</code></td>
+<td align="left">Bring back the Ussal Crab Shells to Garan, be careful they are hidden in a secret cave. you can enter in by running straight starting from the bridge, until you reach some pillars.</td>
+</tr>
+<tr>
+<td align="left"><code>81</code></td>
+<td align="left">Escort the Matoran Slave to his house (1)</td>
+</tr>
+<tr>
+<td align="left"><code>82</code></td>
+<td align="left">Escort the Matoran Slave to his house (2)</td>
+</tr>
+<tr>
+<td align="left"><code>83</code></td>
+<td align="left">Escort the Matoran Slave to his house (3)</td>
+</tr>
+<tr>
+<td align="left"><code>85</code></td>
+<td align="left">Talk to the Matoran Slave</td>
+</tr>
+<tr>
+<td align="left"><code>86</code></td>
+<td align="left">Bring back fire metal pieces from Fire Gafna to Dalu.</td>
+</tr>
+<tr>
+<td align="left"><code>87</code></td>
+<td align="left">Train a bit before your next mission</td>
+</tr>
+<tr>
+<td align="left"><code>88</code></td>
+<td align="left">Escort the Matoran Slaves to the jungle santuary</td>
+</tr>
+<tr>
+<td align="left"><code>89</code></td>
+<td align="left">Try to find a way inside the lava dam station</td>
+</tr>
+<tr>
+<td align="left"><code>90</code></td>
+<td align="left">Find an energy stone on a Nektann.</td>
+</tr>
+<tr>
+<td align="left"><code>91</code></td>
+<td align="left">Distract the blocking Lava Ape and escort Garan to the Jungle Island.</td>
+</tr>
+<tr>
+<td align="left"><code>92</code></td>
+<td align="left">Find slave room in Voya Nui caves.</td>
+</tr>
+<tr>
+<td align="left"><code>94</code></td>
+<td align="left">Go to the Matoran fortress, and try to find a way to repair the lightstone.</td>
+</tr>
+<tr>
+<td align="left"><code>95</code></td>
+<td align="left">Garan told you to train a bit against earth enemies in Jungle.</td>
+</tr>
+<tr>
+<td align="left"><code>96</code></td>
+<td align="left">Meet Garan in his hideout</td>
+</tr>
+<tr>
+<td align="left"><code>97</code></td>
+<td align="left">Explore the cave and steal equipment.</td>
+</tr>
+<tr>
+<td align="left"><code>98</code></td>
+<td align="left">Retrieve invisibility stone</td>
+</tr>
+<tr>
+<td align="left"><code>99</code></td>
+<td align="left">Talk to Garan</td>
+</tr>
+<tr>
+<td align="left"><code>100</code></td>
+<td align="left">Progress in the Piraka Stronghold tunnel and open the main door</td>
+</tr>
+<tr>
+<td align="left"><code>101</code></td>
+<td align="left">Heal your Burnak</td>
+</tr>
+<tr>
+<td align="left"><code>102</code></td>
+<td align="left">Use your burnak to activate the switch into the Dam Station</td>
+</tr>
+<tr>
+<td align="left"><code>103</code></td>
+<td align="left">Free the slave using protodermis</td>
+</tr>
+<tr>
+<td align="left"><code>104</code></td>
+<td align="left">Fight the 6 Pirakas</td>
+</tr>
+<tr>
+<td align="left"><code>105</code></td>
+<td align="left">Defeat the seventh Piraka</td>
+</tr>
+<tr>
+<td align="left"><code>106</code></td>
+<td align="left">Free Voya Nui</td>
+</tr>
+<tr>
+<td align="left"><code>107</code></td>
+<td align="left">Toa holidays</td>
+</tr>
+</tbody></table>
+<h3 id="items">Items</h3>
+<table>
+<thead>
+<tr>
+<th align="left">ID</th>
+<th align="left">Name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>2</code></td>
+<td align="left">Ice metal piece</td>
+</tr>
+<tr>
+<td align="left"><code>6</code></td>
+<td align="left">Lava Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>7</code></td>
+<td align="left">Slow Action Pack</td>
+</tr>
+<tr>
+<td align="left"><code>8</code></td>
+<td align="left">Defense Kanohi of Fire</td>
+</tr>
+<tr>
+<td align="left"><code>12</code></td>
+<td align="left">Teleportation Pack</td>
+</tr>
+<tr>
+<td align="left"><code>16</code></td>
+<td align="left">Enhanced Lava Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>24</code></td>
+<td align="left">Defense Noble Kanohi of Fire</td>
+</tr>
+<tr>
+<td align="left"><code>25</code></td>
+<td align="left">Light Defense Armor of Fire</td>
+</tr>
+<tr>
+<td align="left"><code>26</code></td>
+<td align="left">Light Defense Greaves of Fire</td>
+</tr>
+<tr>
+<td align="left"><code>28</code></td>
+<td align="left">Life Stone</td>
+</tr>
+<tr>
+<td align="left"><code>30</code></td>
+<td align="left">Slow Motion Pack</td>
+</tr>
+<tr>
+<td align="left"><code>31</code></td>
+<td align="left">Range Pack</td>
+</tr>
+<tr>
+<td align="left"><code>33</code></td>
+<td align="left">Tamed Burnak</td>
+</tr>
+<tr>
+<td align="left"><code>35</code></td>
+<td align="left">Water Ion Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>36</code></td>
+<td align="left">Enhanced Water Ion Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>37</code></td>
+<td align="left">Stone Ion Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>38</code></td>
+<td align="left">Enhanced Stone Ion Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>39</code></td>
+<td align="left">Ice Ion Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>40</code></td>
+<td align="left">Enhanced Ice Ion Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>41</code></td>
+<td align="left">Air Ion Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>42</code></td>
+<td align="left">Enhanced Air Ion Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>43</code></td>
+<td align="left">Earth Ion Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>44</code></td>
+<td align="left">Enhanced Earth Ion Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>45</code></td>
+<td align="left">Fire Zamor Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>46</code></td>
+<td align="left">Enhanced Fire Zamor Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>47</code></td>
+<td align="left">Stone Zamor Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>48</code></td>
+<td align="left">Enhanced Stone Zamor Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>49</code></td>
+<td align="left">Water Zamor Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>50</code></td>
+<td align="left">Enhanced Water Zamor Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>51</code></td>
+<td align="left">Ice Zamor Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>52</code></td>
+<td align="left">Enhanced Ice Zamor Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>53</code></td>
+<td align="left">Air Zamor Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>54</code></td>
+<td align="left">Enhanced Air Zamor Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>55</code></td>
+<td align="left">Earth Zamor Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>56</code></td>
+<td align="left">Enhanced Earth Zamor Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>57</code></td>
+<td align="left">Fire Reaper</td>
+</tr>
+<tr>
+<td align="left"><code>58</code></td>
+<td align="left">Fire Shredder</td>
+</tr>
+<tr>
+<td align="left"><code>59</code></td>
+<td align="left">Stone Ripper</td>
+</tr>
+<tr>
+<td align="left"><code>60</code></td>
+<td align="left">Stone Shredder</td>
+</tr>
+<tr>
+<td align="left"><code>61</code></td>
+<td align="left">Water Ripper</td>
+</tr>
+<tr>
+<td align="left"><code>62</code></td>
+<td align="left">Water Shredder</td>
+</tr>
+<tr>
+<td align="left"><code>63</code></td>
+<td align="left">Ice Ripper</td>
+</tr>
+<tr>
+<td align="left"><code>64</code></td>
+<td align="left">Ice Shredder</td>
+</tr>
+<tr>
+<td align="left"><code>65</code></td>
+<td align="left">Air Ripper</td>
+</tr>
+<tr>
+<td align="left"><code>66</code></td>
+<td align="left">Air Shredder</td>
+</tr>
+<tr>
+<td align="left"><code>67</code></td>
+<td align="left">Earth Reaper</td>
+</tr>
+<tr>
+<td align="left"><code>68</code></td>
+<td align="left">Earth Shredder</td>
+</tr>
+<tr>
+<td align="left"><code>69</code></td>
+<td align="left">Fire Slash</td>
+</tr>
+<tr>
+<td align="left"><code>70</code></td>
+<td align="left">Fire Reaver</td>
+</tr>
+<tr>
+<td align="left"><code>71</code></td>
+<td align="left">Stone Slash</td>
+</tr>
+<tr>
+<td align="left"><code>72</code></td>
+<td align="left">Stone Reaver</td>
+</tr>
+<tr>
+<td align="left"><code>73</code></td>
+<td align="left">Water Slash</td>
+</tr>
+<tr>
+<td align="left"><code>74</code></td>
+<td align="left">Water Reaver</td>
+</tr>
+<tr>
+<td align="left"><code>75</code></td>
+<td align="left">Ice Slash</td>
+</tr>
+<tr>
+<td align="left"><code>76</code></td>
+<td align="left">Ice Reaver</td>
+</tr>
+<tr>
+<td align="left"><code>77</code></td>
+<td align="left">Air Slash</td>
+</tr>
+<tr>
+<td align="left"><code>78</code></td>
+<td align="left">Air Reaver</td>
+</tr>
+<tr>
+<td align="left"><code>79</code></td>
+<td align="left">Earth Slash</td>
+</tr>
+<tr>
+<td align="left"><code>80</code></td>
+<td align="left">Earth Reaver</td>
+</tr>
+<tr>
+<td align="left"><code>81</code></td>
+<td align="left">Fire Claw</td>
+</tr>
+<tr>
+<td align="left"><code>82</code></td>
+<td align="left">Fire Talon</td>
+</tr>
+<tr>
+<td align="left"><code>83</code></td>
+<td align="left">Stone Claw</td>
+</tr>
+<tr>
+<td align="left"><code>84</code></td>
+<td align="left">Stone Talon</td>
+</tr>
+<tr>
+<td align="left"><code>85</code></td>
+<td align="left">Water Claw</td>
+</tr>
+<tr>
+<td align="left"><code>86</code></td>
+<td align="left">Water Talon</td>
+</tr>
+<tr>
+<td align="left"><code>87</code></td>
+<td align="left">Ice Claw</td>
+</tr>
+<tr>
+<td align="left"><code>88</code></td>
+<td align="left">Ice Talon</td>
+</tr>
+<tr>
+<td align="left"><code>89</code></td>
+<td align="left">Air Claw</td>
+</tr>
+<tr>
+<td align="left"><code>90</code></td>
+<td align="left">Air Talon</td>
+</tr>
+<tr>
+<td align="left"><code>91</code></td>
+<td align="left">Earth Claw</td>
+</tr>
+<tr>
+<td align="left"><code>92</code></td>
+<td align="left">Earth Talon</td>
+</tr>
+<tr>
+<td align="left"><code>93</code></td>
+<td align="left">Fire Spear</td>
+</tr>
+<tr>
+<td align="left"><code>94</code></td>
+<td align="left">Fire Harpoon</td>
+</tr>
+<tr>
+<td align="left"><code>95</code></td>
+<td align="left">Stone Spear</td>
+</tr>
+<tr>
+<td align="left"><code>96</code></td>
+<td align="left">Stone Harpoon</td>
+</tr>
+<tr>
+<td align="left"><code>97</code></td>
+<td align="left">Water Spear</td>
+</tr>
+<tr>
+<td align="left"><code>98</code></td>
+<td align="left">Water Harpoon</td>
+</tr>
+<tr>
+<td align="left"><code>99</code></td>
+<td align="left">Ice Spear</td>
+</tr>
+<tr>
+<td align="left"><code>100</code></td>
+<td align="left">Ice Harpoon</td>
+</tr>
+<tr>
+<td align="left"><code>101</code></td>
+<td align="left">Air Spear</td>
+</tr>
+<tr>
+<td align="left"><code>102</code></td>
+<td align="left">Air Harpoon</td>
+</tr>
+<tr>
+<td align="left"><code>103</code></td>
+<td align="left">Earth Spear</td>
+</tr>
+<tr>
+<td align="left"><code>104</code></td>
+<td align="left">Earth Harpoon</td>
+</tr>
+<tr>
+<td align="left"><code>105</code></td>
+<td align="left">Fire Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>106</code></td>
+<td align="left">Fire Power Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>107</code></td>
+<td align="left">Stone Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>108</code></td>
+<td align="left">Stone Power Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>109</code></td>
+<td align="left">Water Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>110</code></td>
+<td align="left">Water Power Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>111</code></td>
+<td align="left">Ice Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>112</code></td>
+<td align="left">Ice Power Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>113</code></td>
+<td align="left">Air Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>114</code></td>
+<td align="left">Air Power Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>115</code></td>
+<td align="left">Earth Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>116</code></td>
+<td align="left">Earth Power Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>117</code></td>
+<td align="left">Medium Defense Armor of Fire</td>
+</tr>
+<tr>
+<td align="left"><code>118</code></td>
+<td align="left">Heavy Defense Armor of Fire</td>
+</tr>
+<tr>
+<td align="left"><code>119</code></td>
+<td align="left">Defense Great Kanohi of Fire</td>
+</tr>
+<tr>
+<td align="left"><code>120</code></td>
+<td align="left">Defense Kanohi of Stone</td>
+</tr>
+<tr>
+<td align="left"><code>121</code></td>
+<td align="left">Defense Noble Kanohi of Stone</td>
+</tr>
+<tr>
+<td align="left"><code>122</code></td>
+<td align="left">Defense Great Kanohi of Stone</td>
+</tr>
+<tr>
+<td align="left"><code>123</code></td>
+<td align="left">Defense Kanohi of Water</td>
+</tr>
+<tr>
+<td align="left"><code>124</code></td>
+<td align="left">Defense Noble Kanohi of Water</td>
+</tr>
+<tr>
+<td align="left"><code>125</code></td>
+<td align="left">Defense Great Kanohi of Water</td>
+</tr>
+<tr>
+<td align="left"><code>126</code></td>
+<td align="left">Defense Kanohi of Ice</td>
+</tr>
+<tr>
+<td align="left"><code>127</code></td>
+<td align="left">Defense Noble Kanohi of Ice</td>
+</tr>
+<tr>
+<td align="left"><code>128</code></td>
+<td align="left">Defense Great Kanohi of Ice</td>
+</tr>
+<tr>
+<td align="left"><code>129</code></td>
+<td align="left">Defense Kanohi of Air</td>
+</tr>
+<tr>
+<td align="left"><code>130</code></td>
+<td align="left">Defense Noble Kanohi of Air</td>
+</tr>
+<tr>
+<td align="left"><code>131</code></td>
+<td align="left">Defense Great Kanohi of Air</td>
+</tr>
+<tr>
+<td align="left"><code>132</code></td>
+<td align="left">Defense Kanohi of Earth</td>
+</tr>
+<tr>
+<td align="left"><code>133</code></td>
+<td align="left">Defense Noble Kanohi of Earth</td>
+</tr>
+<tr>
+<td align="left"><code>134</code></td>
+<td align="left">Defense Great Kanohi of Earth</td>
+</tr>
+<tr>
+<td align="left"><code>135</code></td>
+<td align="left">Attack Kanohi of Fire</td>
+</tr>
+<tr>
+<td align="left"><code>136</code></td>
+<td align="left">Attack Noble Kanohi of Fire</td>
+</tr>
+<tr>
+<td align="left"><code>137</code></td>
+<td align="left">Attack Great Kanohi of Fire</td>
+</tr>
+<tr>
+<td align="left"><code>138</code></td>
+<td align="left">Attack Kanohi of Stone</td>
+</tr>
+<tr>
+<td align="left"><code>139</code></td>
+<td align="left">Attack Noble Kanohi of Stone</td>
+</tr>
+<tr>
+<td align="left"><code>140</code></td>
+<td align="left">Attack Great Kanohi of Stone</td>
+</tr>
+<tr>
+<td align="left"><code>141</code></td>
+<td align="left">Attack Kanohi of Water</td>
+</tr>
+<tr>
+<td align="left"><code>142</code></td>
+<td align="left">Attack Noble Kanohi of Water</td>
+</tr>
+<tr>
+<td align="left"><code>143</code></td>
+<td align="left">Attack Great Kanohi of Water</td>
+</tr>
+<tr>
+<td align="left"><code>144</code></td>
+<td align="left">Attack Kanohi of Ice</td>
+</tr>
+<tr>
+<td align="left"><code>145</code></td>
+<td align="left">Attack Noble Kanohi of Ice</td>
+</tr>
+<tr>
+<td align="left"><code>146</code></td>
+<td align="left">Attack Great Kanohi of Ice</td>
+</tr>
+<tr>
+<td align="left"><code>147</code></td>
+<td align="left">Attack Kanohi of Air</td>
+</tr>
+<tr>
+<td align="left"><code>148</code></td>
+<td align="left">Attack Noble Kanohi of Air</td>
+</tr>
+<tr>
+<td align="left"><code>149</code></td>
+<td align="left">Attack Great Kanohi of Air</td>
+</tr>
+<tr>
+<td align="left"><code>150</code></td>
+<td align="left">Attack Kanohi of Earth</td>
+</tr>
+<tr>
+<td align="left"><code>151</code></td>
+<td align="left">Attack Noble Kanohi of Earth</td>
+</tr>
+<tr>
+<td align="left"><code>152</code></td>
+<td align="left">Attack Great Kanohi of Earth</td>
+</tr>
+<tr>
+<td align="left"><code>153</code></td>
+<td align="left">Light Defense Armor of Stone</td>
+</tr>
+<tr>
+<td align="left"><code>154</code></td>
+<td align="left">Medium Defense Armor of Stone</td>
+</tr>
+<tr>
+<td align="left"><code>155</code></td>
+<td align="left">Heavy Defense Armor of Stone</td>
+</tr>
+<tr>
+<td align="left"><code>156</code></td>
+<td align="left">Light Defense Armor of Water</td>
+</tr>
+<tr>
+<td align="left"><code>157</code></td>
+<td align="left">Medium Defense Armor of Water</td>
+</tr>
+<tr>
+<td align="left"><code>158</code></td>
+<td align="left">Heavy Defense Armor of Water</td>
+</tr>
+<tr>
+<td align="left"><code>159</code></td>
+<td align="left">Light Defense Armor of Ice</td>
+</tr>
+<tr>
+<td align="left"><code>160</code></td>
+<td align="left">Medium Defense Armor of Ice</td>
+</tr>
+<tr>
+<td align="left"><code>161</code></td>
+<td align="left">Heavy Defense Armor of Ice</td>
+</tr>
+<tr>
+<td align="left"><code>162</code></td>
+<td align="left">Light Defense Armor of Air</td>
+</tr>
+<tr>
+<td align="left"><code>163</code></td>
+<td align="left">Medium Defense Armor of Air</td>
+</tr>
+<tr>
+<td align="left"><code>164</code></td>
+<td align="left">Heavy Defense Armor of Air</td>
+</tr>
+<tr>
+<td align="left"><code>165</code></td>
+<td align="left">Light Defense Armor of Earth</td>
+</tr>
+<tr>
+<td align="left"><code>166</code></td>
+<td align="left">Medium Defense Armor of Earth</td>
+</tr>
+<tr>
+<td align="left"><code>167</code></td>
+<td align="left">Heavy Defense Armor of Earth</td>
+</tr>
+<tr>
+<td align="left"><code>168</code></td>
+<td align="left">Medium Defense Greaves of Fire</td>
+</tr>
+<tr>
+<td align="left"><code>169</code></td>
+<td align="left">Heavy Defense Greaves of Fire</td>
+</tr>
+<tr>
+<td align="left"><code>170</code></td>
+<td align="left">Light Defense Greaves of Stone</td>
+</tr>
+<tr>
+<td align="left"><code>171</code></td>
+<td align="left">Medium Defense Greaves of Stone</td>
+</tr>
+<tr>
+<td align="left"><code>172</code></td>
+<td align="left">Heavy Defense Greaves of Stone</td>
+</tr>
+<tr>
+<td align="left"><code>173</code></td>
+<td align="left">Light Defense Greaves of Water</td>
+</tr>
+<tr>
+<td align="left"><code>174</code></td>
+<td align="left">Medium Defense Greaves of Water</td>
+</tr>
+<tr>
+<td align="left"><code>175</code></td>
+<td align="left">Heavy Defense Greaves of Water</td>
+</tr>
+<tr>
+<td align="left"><code>176</code></td>
+<td align="left">Light Defense Greaves of Ice</td>
+</tr>
+<tr>
+<td align="left"><code>177</code></td>
+<td align="left">Medium Defense Greaves of Ice</td>
+</tr>
+<tr>
+<td align="left"><code>178</code></td>
+<td align="left">Heavy Defense Greaves of Ice</td>
+</tr>
+<tr>
+<td align="left"><code>179</code></td>
+<td align="left">Light Defense Greaves of Air</td>
+</tr>
+<tr>
+<td align="left"><code>180</code></td>
+<td align="left">Medium Defense Greaves of Air</td>
+</tr>
+<tr>
+<td align="left"><code>181</code></td>
+<td align="left">Heavy Defense Greaves of Air</td>
+</tr>
+<tr>
+<td align="left"><code>182</code></td>
+<td align="left">Light Defense Greaves of Earth</td>
+</tr>
+<tr>
+<td align="left"><code>183</code></td>
+<td align="left">Medium Defense Greaves of Earth</td>
+</tr>
+<tr>
+<td align="left"><code>184</code></td>
+<td align="left">Heavy Defense Greaves of Earth</td>
+</tr>
+<tr>
+<td align="left"><code>185</code></td>
+<td align="left">Light Attack Greaves of Fire</td>
+</tr>
+<tr>
+<td align="left"><code>186</code></td>
+<td align="left">Medium Attack Greaves of Fire</td>
+</tr>
+<tr>
+<td align="left"><code>187</code></td>
+<td align="left">Heavy Attack Greaves of Fire</td>
+</tr>
+<tr>
+<td align="left"><code>188</code></td>
+<td align="left">Light Attack Greaves of Stone</td>
+</tr>
+<tr>
+<td align="left"><code>189</code></td>
+<td align="left">Medium Attack Greaves of Stone</td>
+</tr>
+<tr>
+<td align="left"><code>190</code></td>
+<td align="left">Heavy Attack Greaves of Stone</td>
+</tr>
+<tr>
+<td align="left"><code>191</code></td>
+<td align="left">Light Attack Greaves of Water</td>
+</tr>
+<tr>
+<td align="left"><code>192</code></td>
+<td align="left">Medium Attack Greaves of Water</td>
+</tr>
+<tr>
+<td align="left"><code>193</code></td>
+<td align="left">Heavy Attack Greaves of Water</td>
+</tr>
+<tr>
+<td align="left"><code>194</code></td>
+<td align="left">Light Attack Greaves of Ice</td>
+</tr>
+<tr>
+<td align="left"><code>195</code></td>
+<td align="left">Medium Attack Greaves of Ice</td>
+</tr>
+<tr>
+<td align="left"><code>196</code></td>
+<td align="left">Heavy Attack Greaves of Ice</td>
+</tr>
+<tr>
+<td align="left"><code>197</code></td>
+<td align="left">Light Attack Greaves of Air</td>
+</tr>
+<tr>
+<td align="left"><code>198</code></td>
+<td align="left">Medium Attack Greaves of Air</td>
+</tr>
+<tr>
+<td align="left"><code>199</code></td>
+<td align="left">Heavy Attack Greaves of Air</td>
+</tr>
+<tr>
+<td align="left"><code>200</code></td>
+<td align="left">Light Attack Greaves of Earth</td>
+</tr>
+<tr>
+<td align="left"><code>201</code></td>
+<td align="left">Medium Attack Greaves of Earth</td>
+</tr>
+<tr>
+<td align="left"><code>202</code></td>
+<td align="left">Heavy Attack Greaves of Earth</td>
+</tr>
+<tr>
+<td align="left"><code>206</code></td>
+<td align="left">Improved Range Pack</td>
+</tr>
+<tr>
+<td align="left"><code>207</code></td>
+<td align="left">Improved Teleportation Pack</td>
+</tr>
+<tr>
+<td align="left"><code>208</code></td>
+<td align="left">Improved Slow Action Pack</td>
+</tr>
+<tr>
+<td align="left"><code>212</code></td>
+<td align="left">Light Attack Armor of Fire</td>
+</tr>
+<tr>
+<td align="left"><code>213</code></td>
+<td align="left">Medium Attack Armor of Fire</td>
+</tr>
+<tr>
+<td align="left"><code>214</code></td>
+<td align="left">Heavy Attack Armor of Fire</td>
+</tr>
+<tr>
+<td align="left"><code>215</code></td>
+<td align="left">Light Attack Armor of Stone</td>
+</tr>
+<tr>
+<td align="left"><code>216</code></td>
+<td align="left">Medium Attack Armor of Stone</td>
+</tr>
+<tr>
+<td align="left"><code>217</code></td>
+<td align="left">Heavy Attack Armor of Stone</td>
+</tr>
+<tr>
+<td align="left"><code>218</code></td>
+<td align="left">Light Attack Armor of Water</td>
+</tr>
+<tr>
+<td align="left"><code>219</code></td>
+<td align="left">Medium Attack Armor of Water</td>
+</tr>
+<tr>
+<td align="left"><code>220</code></td>
+<td align="left">Heavy Attack Armor of Water</td>
+</tr>
+<tr>
+<td align="left"><code>221</code></td>
+<td align="left">Light Attack Armor of Ice</td>
+</tr>
+<tr>
+<td align="left"><code>222</code></td>
+<td align="left">Medium Attack Armor of Ice</td>
+</tr>
+<tr>
+<td align="left"><code>223</code></td>
+<td align="left">Heavy Attack Armor of Ice</td>
+</tr>
+<tr>
+<td align="left"><code>224</code></td>
+<td align="left">Light Attack Armor of Air</td>
+</tr>
+<tr>
+<td align="left"><code>225</code></td>
+<td align="left">Medium Attack Armor of Air</td>
+</tr>
+<tr>
+<td align="left"><code>226</code></td>
+<td align="left">Heavy Attack Armor of Air</td>
+</tr>
+<tr>
+<td align="left"><code>227</code></td>
+<td align="left">Light Attack Armor of Earth</td>
+</tr>
+<tr>
+<td align="left"><code>228</code></td>
+<td align="left">Medium Attack Armor of Earth</td>
+</tr>
+<tr>
+<td align="left"><code>229</code></td>
+<td align="left">Heavy Attack Armor of Earth</td>
+</tr>
+<tr>
+<td align="left"><code>239</code></td>
+<td align="left">Improvement kit</td>
+</tr>
+<tr>
+<td align="left"><code>241</code></td>
+<td align="left">Nui Blaster</td>
+</tr>
+<tr>
+<td align="left"><code>242</code></td>
+<td align="left">Lifestone</td>
+</tr>
+<tr>
+<td align="left"><code>243</code></td>
+<td align="left">Lightstone</td>
+</tr>
+<tr>
+<td align="left"><code>244</code></td>
+<td align="left">Power stone</td>
+</tr>
+<tr>
+<td align="left"><code>245</code></td>
+<td align="left">Energy Stone</td>
+</tr>
+<tr>
+<td align="left"><code>246</code></td>
+<td align="left">Destruction Stone</td>
+</tr>
+<tr>
+<td align="left"><code>247</code></td>
+<td align="left">Locating Stone</td>
+</tr>
+<tr>
+<td align="left"><code>249</code></td>
+<td align="left">Burnak food</td>
+</tr>
+<tr>
+<td align="left"><code>250</code></td>
+<td align="left">Fikou metal piece</td>
+</tr>
+<tr>
+<td align="left"><code>251</code></td>
+<td align="left">Equipment, first part</td>
+</tr>
+<tr>
+<td align="left"><code>252</code></td>
+<td align="left">Velika’s carving Tools</td>
+</tr>
+<tr>
+<td align="left"><code>253</code></td>
+<td align="left">Heavy metal fragment</td>
+</tr>
+<tr>
+<td align="left"><code>254</code></td>
+<td align="left">Little metal fragment</td>
+</tr>
+<tr>
+<td align="left"><code>255</code></td>
+<td align="left">Energy crystal</td>
+</tr>
+<tr>
+<td align="left"><code>256</code></td>
+<td align="left">Fire Metal Piece</td>
+</tr>
+<tr>
+<td align="left"><code>257</code></td>
+<td align="left">Rock Ussal Metal Piece</td>
+</tr>
+<tr>
+<td align="left"><code>258</code></td>
+<td align="left">Water Burnak metal piece</td>
+</tr>
+<tr>
+<td align="left"><code>259</code></td>
+<td align="left">Water Gafna metal piece</td>
+</tr>
+<tr>
+<td align="left"><code>260</code></td>
+<td align="left">Hidden Caves Key</td>
+</tr>
+<tr>
+<td align="left"><code>261</code></td>
+<td align="left">Vision Mask</td>
+</tr>
+<tr>
+<td align="left"><code>262</code></td>
+<td align="left">Intelligence Stone</td>
+</tr>
+<tr>
+<td align="left"><code>263</code></td>
+<td align="left">Magic Invisibility Stone</td>
+</tr>
+<tr>
+<td align="left"><code>264</code></td>
+<td align="left">Vision Pack</td>
+</tr>
+<tr>
+<td align="left"><code>265</code></td>
+<td align="left">Improved Vision Pack</td>
+</tr>
+<tr>
+<td align="left"><code>266</code></td>
+<td align="left">Improved Slow Motion Pack</td>
+</tr>
+<tr>
+<td align="left"><code>267</code></td>
+<td align="left">Energy Stone</td>
+</tr>
+<tr>
+<td align="left"><code>268</code></td>
+<td align="left">Thok Key</td>
+</tr>
+<tr>
+<td align="left"><code>269</code></td>
+<td align="left">Box of metal eating insects</td>
+</tr>
+<tr>
+<td align="left"><code>270</code></td>
+<td align="left">Chamber of Truth Key</td>
+</tr>
+<tr>
+<td align="left"><code>271</code></td>
+<td align="left">Equipment, second part</td>
+</tr>
+<tr>
+<td align="left"><code>272</code></td>
+<td align="left">Equipment, third part</td>
+</tr>
+<tr>
+<td align="left"><code>273</code></td>
+<td align="left">Garan’s Equipment</td>
+</tr>
+<tr>
+<td align="left"><code>274</code></td>
+<td align="left">Ussal crab shell</td>
+</tr>
+<tr>
+<td align="left"><code>275</code></td>
+<td align="left">Velika’s special tools</td>
+</tr>
+<tr>
+<td align="left"><code>276</code></td>
+<td align="left">Elemental stone of birth</td>
+</tr>
+<tr>
+<td align="left"><code>277</code></td>
+<td align="left">Elemental Stone of grown</td>
+</tr>
+<tr>
+<td align="left"><code>278</code></td>
+<td align="left">Elemental Stone of death</td>
+</tr>
+<tr>
+<td align="left"><code>279</code></td>
+<td align="left">Wind stone</td>
+</tr>
+<tr>
+<td align="left"><code>280</code></td>
+<td align="left">Velika’s Key</td>
+</tr>
+<tr>
+<td align="left"><code>281</code></td>
+<td align="left">Destruction crystals</td>
+</tr>
+<tr>
+<td align="left"><code>282</code></td>
+<td align="left">Mask of Life</td>
+</tr>
+<tr>
+<td align="left"><code>283</code></td>
+<td align="left">Air shard</td>
+</tr>
+<tr>
+<td align="left"><code>284</code></td>
+<td align="left">Fire shard</td>
+</tr>
+<tr>
+<td align="left"><code>285</code></td>
+<td align="left">Ice shard</td>
+</tr>
+<tr>
+<td align="left"><code>286</code></td>
+<td align="left">Water shard</td>
+</tr>
+<tr>
+<td align="left"><code>287</code></td>
+<td align="left">Earth shard</td>
+</tr>
+<tr>
+<td align="left"><code>288</code></td>
+<td align="left">Stone shard</td>
+</tr>
+<tr>
+<td align="left"><code>289</code></td>
+<td align="left">Powerful Life Stone</td>
+</tr>
+<tr>
+<td align="left"><code>290</code></td>
+<td align="left">Soul Stone</td>
+</tr>
+<tr>
+<td align="left"><code>291</code></td>
+<td align="left">Powerful Soul Stone</td>
+</tr>
+</tbody></table>
+<h3 id="spells">Spells</h3>
+<table>
+<thead>
+<tr>
+<th align="left">ID</th>
+<th align="left">Name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>1</code></td>
+<td align="left">Special Toa Earth</td>
+</tr>
+<tr>
+<td align="left"><code>2</code></td>
+<td align="left">Special Toa Stone</td>
+</tr>
+<tr>
+<td align="left"><code>3</code></td>
+<td align="left">Special Toa Water</td>
+</tr>
+<tr>
+<td align="left"><code>4</code></td>
+<td align="left">Special Toa Ice</td>
+</tr>
+<tr>
+<td align="left"><code>5</code></td>
+<td align="left">Special Toa Fire</td>
+</tr>
+<tr>
+<td align="left"><code>6</code></td>
+<td align="left">Special Toa Air</td>
+</tr>
+<tr>
+<td align="left"><code>7</code></td>
+<td align="left">Ice Ratigo’s bite</td>
+</tr>
+<tr>
+<td align="left"><code>8</code></td>
+<td align="left">Earth Ratigo’s bite</td>
+</tr>
+<tr>
+<td align="left"><code>9</code></td>
+<td align="left">Carapace throwing</td>
+</tr>
+<tr>
+<td align="left"><code>10</code></td>
+<td align="left">Mechanical attack</td>
+</tr>
+<tr>
+<td align="left"><code>11</code></td>
+<td align="left">Attraction</td>
+</tr>
+<tr>
+<td align="left"><code>12</code></td>
+<td align="left">Fire Ratigo’s bite</td>
+</tr>
+<tr>
+<td align="left"><code>13</code></td>
+<td align="left">Nozzle Blow</td>
+</tr>
+<tr>
+<td align="left"><code>14</code></td>
+<td align="left">Take-off</td>
+</tr>
+<tr>
+<td align="left"><code>15</code></td>
+<td align="left">Paralysing ray</td>
+</tr>
+<tr>
+<td align="left"><code>16</code></td>
+<td align="left">Crushing</td>
+</tr>
+<tr>
+<td align="left"><code>17</code></td>
+<td align="left">Perforation</td>
+</tr>
+<tr>
+<td align="left"><code>18</code></td>
+<td align="left">Water blow</td>
+</tr>
+<tr>
+<td align="left"><code>19</code></td>
+<td align="left">Self defense</td>
+</tr>
+<tr>
+<td align="left"><code>20</code></td>
+<td align="left">Water Pinching</td>
+</tr>
+<tr>
+<td align="left"><code>21</code></td>
+<td align="left">Water Ratigo’s bite</td>
+</tr>
+<tr>
+<td align="left"><code>22</code></td>
+<td align="left">Kofo Jaga cac</td>
+</tr>
+<tr>
+<td align="left"><code>23</code></td>
+<td align="left">Prodermis boost</td>
+</tr>
+<tr>
+<td align="left"><code>24</code></td>
+<td align="left">Ussal Bite</td>
+</tr>
+<tr>
+<td align="left"><code>25</code></td>
+<td align="left">Debuff pa</td>
+</tr>
+<tr>
+<td align="left"><code>26</code></td>
+<td align="left">Attraction allié</td>
+</tr>
+<tr>
+<td align="left"><code>27</code></td>
+<td align="left">Acceleration</td>
+</tr>
+<tr>
+<td align="left"><code>28</code></td>
+<td align="left">Nui Blaster</td>
+</tr>
+<tr>
+<td align="left"><code>29</code></td>
+<td align="left">Scout Patacle cac</td>
+</tr>
+<tr>
+<td align="left"><code>30</code></td>
+<td align="left">Defense Patacle</td>
+</tr>
+<tr>
+<td align="left"><code>31</code></td>
+<td align="left">Attaque Fikou</td>
+</tr>
+<tr>
+<td align="left"><code>32</code></td>
+<td align="left">Attaque distance Fusa</td>
+</tr>
+<tr>
+<td align="left"><code>33</code></td>
+<td align="left">Stone Ratigo’s bite</td>
+</tr>
+<tr>
+<td align="left"><code>34</code></td>
+<td align="left">Attaque du Combat Patacle</td>
+</tr>
+<tr>
+<td align="left"><code>35</code></td>
+<td align="left">Air Ratigo’s bite</td>
+</tr>
+<tr>
+<td align="left"><code>36</code></td>
+<td align="left">Debuff Patacle</td>
+</tr>
+<tr>
+<td align="left"><code>37</code></td>
+<td align="left">Ice blow</td>
+</tr>
+<tr>
+<td align="left"><code>38</code></td>
+<td align="left">Fire blow</td>
+</tr>
+<tr>
+<td align="left"><code>39</code></td>
+<td align="left">Stone blow</td>
+</tr>
+<tr>
+<td align="left"><code>40</code></td>
+<td align="left">Air pinching</td>
+</tr>
+<tr>
+<td align="left"><code>41</code></td>
+<td align="left">Repair Strike</td>
+</tr>
+<tr>
+<td align="left"><code>42</code></td>
+<td align="left">Earth blow</td>
+</tr>
+<tr>
+<td align="left"><code>43</code></td>
+<td align="left">Fire pinching</td>
+</tr>
+<tr>
+<td align="left"><code>44</code></td>
+<td align="left">Ice pinching</td>
+</tr>
+<tr>
+<td align="left"><code>45</code></td>
+<td align="left">Earth pinching</td>
+</tr>
+<tr>
+<td align="left"><code>46</code></td>
+<td align="left">Stone pinching</td>
+</tr>
+<tr>
+<td align="left"><code>47</code></td>
+<td align="left">Motivation</td>
+</tr>
+<tr>
+<td align="left"><code>48</code></td>
+<td align="left">Air blow</td>
+</tr>
+<tr>
+<td align="left"><code>49</code></td>
+<td align="left">Fire Ion Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>50</code></td>
+<td align="left">Fire Power Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>51</code></td>
+<td align="left">Powerful lava launcher (water)</td>
+</tr>
+<tr>
+<td align="left"><code>52</code></td>
+<td align="left">YoYo</td>
+</tr>
+<tr>
+<td align="left"><code>53</code></td>
+<td align="left">Stone Power Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>54</code></td>
+<td align="left">Powerful lava launcher (fire)</td>
+</tr>
+<tr>
+<td align="left"><code>55</code></td>
+<td align="left">Water Power Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>56</code></td>
+<td align="left">Water Ion Laucnher</td>
+</tr>
+<tr>
+<td align="left"><code>57</code></td>
+<td align="left">Bring life</td>
+</tr>
+<tr>
+<td align="left"><code>58</code></td>
+<td align="left">Debuff rp</td>
+</tr>
+<tr>
+<td align="left"><code>59</code></td>
+<td align="left">Ussal shell</td>
+</tr>
+<tr>
+<td align="left"><code>60</code></td>
+<td align="left">Sacrifice</td>
+</tr>
+<tr>
+<td align="left"><code>61</code></td>
+<td align="left">Powerful lava launcher (ice)</td>
+</tr>
+<tr>
+<td align="left"><code>62</code></td>
+<td align="left">Mental Blast</td>
+</tr>
+<tr>
+<td align="left"><code>63</code></td>
+<td align="left">Air Ion Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>64</code></td>
+<td align="left">Swarm WIll</td>
+</tr>
+<tr>
+<td align="left"><code>65</code></td>
+<td align="left">Powerful lava launcher (air)</td>
+</tr>
+<tr>
+<td align="left"><code>66</code></td>
+<td align="left">Air Harpoon</td>
+</tr>
+<tr>
+<td align="left"><code>67</code></td>
+<td align="left">Earth Ion Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>68</code></td>
+<td align="left">Air Claw</td>
+</tr>
+<tr>
+<td align="left"><code>69</code></td>
+<td align="left">Powerful lava launcher (earth)</td>
+</tr>
+<tr>
+<td align="left"><code>70</code></td>
+<td align="left">Air Prison</td>
+</tr>
+<tr>
+<td align="left"><code>71</code></td>
+<td align="left">Fire Zamor Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>72</code></td>
+<td align="left">Earth absorption</td>
+</tr>
+<tr>
+<td align="left"><code>73</code></td>
+<td align="left">Powerful zamor launcher (fire)</td>
+</tr>
+<tr>
+<td align="left"><code>74</code></td>
+<td align="left">Fire Harpoon</td>
+</tr>
+<tr>
+<td align="left"><code>75</code></td>
+<td align="left">Stone Zamor Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>76</code></td>
+<td align="left">Ice Harpoon</td>
+</tr>
+<tr>
+<td align="left"><code>77</code></td>
+<td align="left">Powerful zamor launcher (stone)</td>
+</tr>
+<tr>
+<td align="left"><code>78</code></td>
+<td align="left">Earth Harpoon</td>
+</tr>
+<tr>
+<td align="left"><code>79</code></td>
+<td align="left">Water Zamor Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>80</code></td>
+<td align="left">Stone Spear</td>
+</tr>
+<tr>
+<td align="left"><code>81</code></td>
+<td align="left">Powerful zamor launcher (water)</td>
+</tr>
+<tr>
+<td align="left"><code>82</code></td>
+<td align="left">Water Spear</td>
+</tr>
+<tr>
+<td align="left"><code>83</code></td>
+<td align="left">Ice Zamor Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>84</code></td>
+<td align="left">Ice Spear</td>
+</tr>
+<tr>
+<td align="left"><code>85</code></td>
+<td align="left">Powerful zamor launcher (ice)</td>
+</tr>
+<tr>
+<td align="left"><code>86</code></td>
+<td align="left">Air Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>87</code></td>
+<td align="left">Air Zamor Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>88</code></td>
+<td align="left">Earth Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>89</code></td>
+<td align="left">Powerful zamor launcher (air)</td>
+</tr>
+<tr>
+<td align="left"><code>90</code></td>
+<td align="left">Ice Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>91</code></td>
+<td align="left">Earth Zamor Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>92</code></td>
+<td align="left">Stone Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>93</code></td>
+<td align="left">Powerful zamor launcher (earth)</td>
+</tr>
+<tr>
+<td align="left"><code>94</code></td>
+<td align="left">Water Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>95</code></td>
+<td align="left">Fire Reaper</td>
+</tr>
+<tr>
+<td align="left"><code>96</code></td>
+<td align="left">A supprimer</td>
+</tr>
+<tr>
+<td align="left"><code>97</code></td>
+<td align="left">Fire Shredder</td>
+</tr>
+<tr>
+<td align="left"><code>98</code></td>
+<td align="left">Fire Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>99</code></td>
+<td align="left">Stone Reaper</td>
+</tr>
+<tr>
+<td align="left"><code>100</code></td>
+<td align="left">Earth Claw</td>
+</tr>
+<tr>
+<td align="left"><code>101</code></td>
+<td align="left">Stone Shredder</td>
+</tr>
+<tr>
+<td align="left"><code>102</code></td>
+<td align="left">Ice Claw</td>
+</tr>
+<tr>
+<td align="left"><code>103</code></td>
+<td align="left">Water Reaper</td>
+</tr>
+<tr>
+<td align="left"><code>104</code></td>
+<td align="left">Stone Claw</td>
+</tr>
+<tr>
+<td align="left"><code>105</code></td>
+<td align="left">Water Shredder</td>
+</tr>
+<tr>
+<td align="left"><code>106</code></td>
+<td align="left">Water Claw</td>
+</tr>
+<tr>
+<td align="left"><code>107</code></td>
+<td align="left">Ice Reaper</td>
+</tr>
+<tr>
+<td align="left"><code>108</code></td>
+<td align="left">Air Spear</td>
+</tr>
+<tr>
+<td align="left"><code>109</code></td>
+<td align="left">Ice Shredder</td>
+</tr>
+<tr>
+<td align="left"><code>110</code></td>
+<td align="left">Earth Spear</td>
+</tr>
+<tr>
+<td align="left"><code>111</code></td>
+<td align="left">Air Reaper</td>
+</tr>
+<tr>
+<td align="left"><code>112</code></td>
+<td align="left">Fire Spear</td>
+</tr>
+<tr>
+<td align="left"><code>113</code></td>
+<td align="left">Air Shredder</td>
+</tr>
+<tr>
+<td align="left"><code>114</code></td>
+<td align="left">Earth Talon</td>
+</tr>
+<tr>
+<td align="left"><code>115</code></td>
+<td align="left">Earth Reaper</td>
+</tr>
+<tr>
+<td align="left"><code>116</code></td>
+<td align="left">Water Talon</td>
+</tr>
+<tr>
+<td align="left"><code>117</code></td>
+<td align="left">Earth Shredder</td>
+</tr>
+<tr>
+<td align="left"><code>118</code></td>
+<td align="left">Air Talon</td>
+</tr>
+<tr>
+<td align="left"><code>119</code></td>
+<td align="left">Fire Slash</td>
+</tr>
+<tr>
+<td align="left"><code>120</code></td>
+<td align="left">Stone Harpoon</td>
+</tr>
+<tr>
+<td align="left"><code>121</code></td>
+<td align="left">Fire Reaver</td>
+</tr>
+<tr>
+<td align="left"><code>122</code></td>
+<td align="left">Stone Talon</td>
+</tr>
+<tr>
+<td align="left"><code>123</code></td>
+<td align="left">Stone Slash</td>
+</tr>
+<tr>
+<td align="left"><code>124</code></td>
+<td align="left">Water Harpoon</td>
+</tr>
+<tr>
+<td align="left"><code>125</code></td>
+<td align="left">Stone Reaver</td>
+</tr>
+<tr>
+<td align="left"><code>126</code></td>
+<td align="left">Air Power Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>127</code></td>
+<td align="left">Water Slash</td>
+</tr>
+<tr>
+<td align="left"><code>128</code></td>
+<td align="left">Earth Power Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>129</code></td>
+<td align="left">Water Reaver</td>
+</tr>
+<tr>
+<td align="left"><code>130</code></td>
+<td align="left">Stone aborption</td>
+</tr>
+<tr>
+<td align="left"><code>131</code></td>
+<td align="left">Ice Slash</td>
+</tr>
+<tr>
+<td align="left"><code>132</code></td>
+<td align="left">Fire Absorption</td>
+</tr>
+<tr>
+<td align="left"><code>133</code></td>
+<td align="left">Ice Reaver</td>
+</tr>
+<tr>
+<td align="left"><code>134</code></td>
+<td align="left">Ice Power Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>135</code></td>
+<td align="left">Air Slash</td>
+</tr>
+<tr>
+<td align="left"><code>136</code></td>
+<td align="left">Water absorption</td>
+</tr>
+<tr>
+<td align="left"><code>137</code></td>
+<td align="left">A supprimer</td>
+</tr>
+<tr>
+<td align="left"><code>138</code></td>
+<td align="left">Air Reaver</td>
+</tr>
+<tr>
+<td align="left"><code>139</code></td>
+<td align="left">Ice absorption</td>
+</tr>
+<tr>
+<td align="left"><code>140</code></td>
+<td align="left">Earth Slash</td>
+</tr>
+<tr>
+<td align="left"><code>142</code></td>
+<td align="left">Earth Reaver</td>
+</tr>
+<tr>
+<td align="left"><code>144</code></td>
+<td align="left">Fire Claw</td>
+</tr>
+<tr>
+<td align="left"><code>145</code></td>
+<td align="left">Wind absorption</td>
+</tr>
+<tr>
+<td align="left"><code>146</code></td>
+<td align="left">Fire Talon</td>
+</tr>
+<tr>
+<td align="left"><code>150</code></td>
+<td align="left">Ice Talon</td>
+</tr>
+<tr>
+<td align="left"><code>154</code></td>
+<td align="left">Ice Ion Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>156</code></td>
+<td align="left">Powerful lava launcher (stone)</td>
+</tr>
+<tr>
+<td align="left"><code>158</code></td>
+<td align="left">Stone Ion Launcher</td>
+</tr>
+<tr>
+<td align="left"><code>160</code></td>
+<td align="left">Powerful Soul stone</td>
+</tr>
+<tr>
+<td align="left"><code>161</code></td>
+<td align="left">Frenzy</td>
+</tr>
+<tr>
+<td align="left"><code>162</code></td>
+<td align="left">Wind Stone</td>
+</tr>
+<tr>
+<td align="left"><code>167</code></td>
+<td align="left">Improved Vision pack</td>
+</tr>
+<tr>
+<td align="left"><code>168</code></td>
+<td align="left">Vision pack</td>
+</tr>
+<tr>
+<td align="left"><code>172</code></td>
+<td align="left">Improved slow motion pack</td>
+</tr>
+<tr>
+<td align="left"><code>173</code></td>
+<td align="left">Slow action pack</td>
+</tr>
+<tr>
+<td align="left"><code>174</code></td>
+<td align="left">Improved slow action pack</td>
+</tr>
+<tr>
+<td align="left"><code>175</code></td>
+<td align="left">Slow action pack</td>
+</tr>
+<tr>
+<td align="left"><code>176</code></td>
+<td align="left">Teleportation pack</td>
+</tr>
+<tr>
+<td align="left"><code>177</code></td>
+<td align="left">Little teleportation pack</td>
+</tr>
+<tr>
+<td align="left"><code>178</code></td>
+<td align="left">Improved range pack</td>
+</tr>
+<tr>
+<td align="left"><code>179</code></td>
+<td align="left">Range pack</td>
+</tr>
+<tr>
+<td align="left"><code>180</code></td>
+<td align="left">Soul Stone</td>
+</tr>
+<tr>
+<td align="left"><code>181</code></td>
+<td align="left">Powerful life stone</td>
+</tr>
+<tr>
+<td align="left"><code>182</code></td>
+<td align="left">Life Stone</td>
+</tr>
+</tbody></table>
+<h3 id="sprites">Sprites</h3>
+<table>
+<thead>
+<tr>
+<th align="left">ID</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>1</code></td>
+<td align="left">Hewkii</td>
+</tr>
+<tr>
+<td align="left"><code>2</code></td>
+<td align="left">Nuparu</td>
+</tr>
+<tr>
+<td align="left"><code>3</code></td>
+<td align="left">Hahli</td>
+</tr>
+<tr>
+<td align="left"><code>4</code></td>
+<td align="left">Matoro</td>
+</tr>
+<tr>
+<td align="left"><code>5</code></td>
+<td align="left">Jaller</td>
+</tr>
+<tr>
+<td align="left"><code>6</code></td>
+<td align="left">Kongu</td>
+</tr>
+<tr>
+<td align="left"><code>10</code></td>
+<td align="left">Avak</td>
+</tr>
+<tr>
+<td align="left"><code>11</code></td>
+<td align="left">Hakann</td>
+</tr>
+<tr>
+<td align="left"><code>12</code></td>
+<td align="left">Reidak</td>
+</tr>
+<tr>
+<td align="left"><code>13</code></td>
+<td align="left">Thok</td>
+</tr>
+<tr>
+<td align="left"><code>14</code></td>
+<td align="left">Vezok</td>
+</tr>
+<tr>
+<td align="left"><code>15</code></td>
+<td align="left">Zaktan</td>
+</tr>
+<tr>
+<td align="left"><code>16</code></td>
+<td align="left">Gafna</td>
+</tr>
+<tr>
+<td align="left"><code>17</code></td>
+<td align="left">Nektann</td>
+</tr>
+<tr>
+<td align="left"><code>18</code></td>
+<td align="left">Burnak</td>
+</tr>
+<tr>
+<td align="left"><code>19</code></td>
+<td align="left">Lava Ape</td>
+</tr>
+<tr>
+<td align="left"><code>20</code></td>
+<td align="left">Shore Turtle</td>
+</tr>
+<tr>
+<td align="left"><code>21</code></td>
+<td align="left">Fikou</td>
+</tr>
+<tr>
+<td align="left"><code>22</code></td>
+<td align="left">Kofo-Jaga</td>
+</tr>
+<tr>
+<td align="left"><code>23</code></td>
+<td align="left">Ussal</td>
+</tr>
+<tr>
+<td align="left"><code>24</code></td>
+<td align="left">Guardian</td>
+</tr>
+<tr>
+<td align="left"><code>25</code></td>
+<td align="left">Seventh Piraka</td>
+</tr>
+<tr>
+<td align="left"><code>26</code></td>
+<td align="left">Hikaki</td>
+</tr>
+<tr>
+<td align="left"><code>27</code></td>
+<td align="left">Ash Hoto</td>
+</tr>
+<tr>
+<td align="left"><code>28</code></td>
+<td align="left">Frozen tree</td>
+</tr>
+<tr>
+<td align="left"><code>101</code></td>
+<td align="left">Velika</td>
+</tr>
+<tr>
+<td align="left"><code>102</code></td>
+<td align="left">Garan</td>
+</tr>
+<tr>
+<td align="left"><code>103</code></td>
+<td align="left">Dalu</td>
+</tr>
+<tr>
+<td align="left"><code>104</code></td>
+<td align="left">Kazi</td>
+</tr>
+<tr>
+<td align="left"><code>105</code></td>
+<td align="left">Balta</td>
+</tr>
+<tr>
+<td align="left"><code>106</code></td>
+<td align="left">Piruk</td>
+</tr>
+<tr>
+<td align="left"><code>107</code></td>
+<td align="left">Storage</td>
+</tr>
+<tr>
+<td align="left"><code>108</code></td>
+<td align="left">Matoran Slave</td>
+</tr>
+<tr>
+<td align="left"><code>109</code></td>
+<td align="left">Frozen tree</td>
+</tr>
+<tr>
+<td align="left"><code>1000</code></td>
+<td align="left">Vezok</td>
+</tr>
+<tr>
+<td align="left"><code>1001</code></td>
+<td align="left">Nektan</td>
+</tr>
+<tr>
+<td align="left"><code>9999</code></td>
+<td align="left">Nektan</td>
+</tr>
+</tbody></table>
+<h3 id="animations">Animations</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>emote1</code></td>
+<td align="left">Create diversion</td>
+</tr>
+<tr>
+<td align="left"><code>emote2</code></td>
+<td align="left">Dig the ground</td>
+</tr>
+<tr>
+<td align="left"><code>emote3</code></td>
+<td align="left">Hide</td>
+</tr>
+<tr>
+<td align="left"><code>static</code></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>walk</code></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>run</code></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>hit</code></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>die</code></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>bonus</code></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>anim0</code></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>anim1</code></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>anim2</code></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>anim10</code></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>anim11</code></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>anim20</code></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>anim21</code></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h3 id="scripts">Scripts</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>intro</code></td>
+<td align="left">Intro</td>
+</tr>
+<tr>
+<td align="left"><code>thok</code></td>
+<td align="left">Thok</td>
+</tr>
+<tr>
+<td align="left"><code>sabotagechap3</code></td>
+<td align="left">Sabotage</td>
+</tr>
+<tr>
+<td align="left"><code>sabotagechap4</code></td>
+<td align="left">Sabotage 2</td>
+</tr>
+<tr>
+<td align="left"><code>controlroom</code></td>
+<td align="left">Control Room</td>
+</tr>
+<tr>
+<td align="left"><code>zaktanflee</code></td>
+<td align="left">Zaktan Flee</td>
+</tr>
+<tr>
+<td align="left"><code>toadeath</code></td>
+<td align="left">Toa Death</td>
+</tr>
+<tr>
+<td align="left"><code>freematoran</code></td>
+<td align="left">Free Matoran 1</td>
+</tr>
+<tr>
+<td align="left"><code>teleportprison</code></td>
+<td align="left">Teleport Prison</td>
+</tr>
+<tr>
+<td align="left"><code>teleportprison2</code></td>
+<td align="left">Jail</td>
+</tr>
+<tr>
+<td align="left"><code>burnaktrap</code></td>
+<td align="left">Burnak Trap</td>
+</tr>
+<tr>
+<td align="left"><code>burnaklava</code></td>
+<td align="left">Burnak Lava</td>
+</tr>
+<tr>
+<td align="left"><code>burnaktriggerlava</code></td>
+<td align="left">Burnak Trigger Lava</td>
+</tr>
+<tr>
+<td align="left"><code>escapejail</code></td>
+<td align="left">Escape From Jail</td>
+</tr>
+<tr>
+<td align="left"><code>hakanndialog</code></td>
+<td align="left">Hakann Dialog</td>
+</tr>
+<tr>
+<td align="left"><code>pirakadialog</code></td>
+<td align="left">Piraka Dialog</td>
+</tr>
+<tr>
+<td align="left"><code>seventhdialog</code></td>
+<td align="left">Seventh Dialog</td>
+</tr>
+<tr>
+<td align="left"><code>zaktanndialog</code></td>
+<td align="left">Zaktann Dialog</td>
+</tr>
+<tr>
+<td align="left"><code>hakannflee</code></td>
+<td align="left">Hakann Flee</td>
+</tr>
+<tr>
+<td align="left"><code>findclue</code></td>
+<td align="left">Find Clue</td>
+</tr>
+<tr>
+<td align="left"><code>strongholdtunnel</code></td>
+<td align="left">Stronghold Tunnel</td>
+</tr>
+<tr>
+<td align="left"><code>end1</code></td>
+<td align="left">End1</td>
+</tr>
+</tbody></table>
+<h3 id="audio-sounds">Audio Sounds</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>toa_choice</code></td>
+</tr>
+<tr>
+<td align="left"><code>stars</code></td>
+</tr>
+<tr>
+<td align="left"><code>spell_water</code></td>
+</tr>
+<tr>
+<td align="left"><code>spell_stone</code></td>
+</tr>
+<tr>
+<td align="left"><code>spell_ice</code></td>
+</tr>
+<tr>
+<td align="left"><code>spell_fire</code></td>
+</tr>
+<tr>
+<td align="left"><code>spell_earth</code></td>
+</tr>
+<tr>
+<td align="left"><code>spell_air</code></td>
+</tr>
+<tr>
+<td align="left"><code>space_tir</code></td>
+</tr>
+<tr>
+<td align="left"><code>shoot</code></td>
+</tr>
+<tr>
+<td align="left"><code>rapid_swish</code></td>
+</tr>
+<tr>
+<td align="left"><code>punch</code></td>
+</tr>
+<tr>
+<td align="left"><code>menu_button</code></td>
+</tr>
+<tr>
+<td align="left"><code>load_spell</code></td>
+</tr>
+<tr>
+<td align="left"><code>little_pose</code></td>
+</tr>
+<tr>
+<td align="left"><code>impact_lourd</code></td>
+</tr>
+<tr>
+<td align="left"><code>hit_defaut</code></td>
+</tr>
+<tr>
+<td align="left"><code>feuillage</code></td>
+</tr>
+<tr>
+<td align="left"><code>explo</code></td>
+</tr>
+<tr>
+<td align="left"><code>deflagration</code></td>
+</tr>
+<tr>
+<td align="left"><code>death_fall</code></td>
+</tr>
+<tr>
+<td align="left"><code>death</code></td>
+</tr>
+<tr>
+<td align="left"><code>click4</code></td>
+</tr>
+<tr>
+<td align="left"><code>click</code></td>
+</tr>
+<tr>
+<td align="left"><code>clak</code></td>
+</tr>
+<tr>
+<td align="left"><code>button_click</code></td>
+</tr>
+<tr>
+<td align="left"><code>baton</code></td>
+</tr>
+<tr>
+<td align="left"><code>aspiration</code></td>
+</tr>
+</tbody></table>
+<h3 id="audio-events">Audio Events</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>onMenuButtons</code></td>
+</tr>
+<tr>
+<td align="left"><code>onToaChoice</code></td>
+</tr>
+<tr>
+<td align="left"><code>onBannerUIButons</code></td>
+</tr>
+<tr>
+<td align="left"><code>onBoostButtons</code></td>
+</tr>
+<tr>
+<td align="left"><code>onEquipItem</code></td>
+</tr>
+<tr>
+<td align="left"><code>onMusicExploration</code></td>
+</tr>
+<tr>
+<td align="left"><code>onMusicFight</code></td>
+</tr>
+</tbody></table>
+<h2 id="bug-fixes">Bug Fixes</h2>
+<ul>
+<li>  Flash Player 10+ version detection.</li>
+</ul>
+<h2 id="license">License</h2>
+<p>Copyright 2006 The LEGO Group and Ankama Studio. Unofficial release by Project Brick.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 	</body>
 </html>
