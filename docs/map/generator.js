@@ -224,6 +224,8 @@ async function generate(attrs = {}) {
 		]),
 		xml('image', {
 			href: `data:image/jpeg;base64,${mapJpgB64}`,
+			width: mapJpgSize.width,
+			height: mapJpgSize.height,
 			x: -offsetX,
 			y: -offsetY
 		}),
