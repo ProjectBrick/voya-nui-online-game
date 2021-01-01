@@ -169,8 +169,7 @@ async function generate(attrs = {}) {
 				xml('text', {
 					class: 'map-marker-label',
 					x: Math.round(textX),
-					y: Math.round(pY),
-					'dominant-baseline': 'text-after-edge',
+					y: Math.round(pY - (fontSize / 3)),
 					'text-anchor': textAnchor
 				}, escapeXml(toRanges(ids).join(' ')))
 			];
