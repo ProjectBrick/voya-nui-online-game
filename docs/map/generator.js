@@ -78,6 +78,8 @@ async function generate(attrs = {}) {
 	const positions = new Map();
 	const maps = await readMaps();
 	const ids = Object.keys(maps).map(Number).sort((a, b) => a - b);
+	const xs = new Set();
+	const ys = new Set();
 	for (const id of ids) {
 		const map = maps[id];
 		const x = Math.max(map.x, -1);
@@ -86,6 +88,46 @@ async function generate(attrs = {}) {
 		const position = positions.get(key) || {x, y, ids: []};
 		position.ids.push(id);
 		positions.set(key, position);
+		xs.add(x);
+		ys.add(y);
+	}
+	const xList = [...xs].sort((a, b) => a - b);
+	const yList = [...ys].sort((a, b) => a - b);
+
+	const gridPad = 2;
+	const gridsXT = [];
+	const gridsXB = [];
+	const gridsYL = [];
+	const gridsYR = [];
+	for (const x of xList) {
+		const p = (x * markerW) + (markerW / 2) + gridX;
+		for (const [grids, y, db] of [
+			[gridsXT, gridPad, 'text-before-edge'],
+			[gridsXB, height - gridPad, 'text-after-edge']
+		]) {
+			grids.push(xml('text', {
+				class: 'map-grid-label',
+				x: Math.round(p),
+				y,
+				'dominant-baseline': db,
+				'text-anchor': 'middle'
+			}, escapeXml(x < 0 ? '-' : x)));
+		}
+	}
+	for (const y of yList) {
+		const p = (y * markerH) + (markerH / 2) + gridY;
+		for (const [grids, x, ta] of [
+			[gridsYL, gridPad, 'start'],
+			[gridsYR, width - gridPad, 'end']
+		]) {
+			grids.push(xml('text', {
+				class: 'map-grid-label',
+				x,
+				y: Math.round(p),
+				'dominant-baseline': 'middle',
+				'text-anchor': ta
+			}, escapeXml(y < 0 ? '-' : y)));
+		}
 	}
 
 	const markers = [...positions.values()]
@@ -123,7 +165,8 @@ async function generate(attrs = {}) {
 				xml('text', {
 					class: 'map-marker-label',
 					x: Math.round(textX),
-					y: Math.round(pY - (fontSize / 4)),
+					y: Math.round(pY),
+					'dominant-baseline': 'text-after-edge',
 					'text-anchor': textAnchor
 				}, escapeXml(toRanges(ids).join(' ')))
 			];
@@ -136,7 +179,25 @@ async function generate(attrs = {}) {
 		viewBox: `0 0 ${width} ${height}`,
 		...attrs
 	}, [
+		xml('defs', {}, [
+			xml('filter', {id: 'map-marker-label'}, [
+				(new Array(2)).fill(xml('feDropShadow', {
+					dx: 0,
+					dy: 0,
+					stdDeviation: 1,
+					'flood-color': '#000000',
+					'flood-opacity': 1
+				}))
+			])
+		]),
 		xml('style', {}, [
+			styles('.map-grid-label', {
+				fill: '#999999',
+				'font-family': 'monospace, monospace',
+				'font-size': `${fontSize}px`,
+				'line-height': 1,
+				'pointer-events': 'none'
+			}),
 			styles('.map-marker-shape', {
 				fill: '#FFFFFF',
 				'fill-opacity': 0.1,
@@ -151,6 +212,7 @@ async function generate(attrs = {}) {
 				'font-family': 'monospace, monospace',
 				'font-size': `${fontSize}px`,
 				'line-height': 1,
+				filter: 'url(#map-marker-label)',
 				'pointer-events': 'none'
 			}),
 			styles('.map-marker-shape:hover + .map-marker-label', {
@@ -160,6 +222,10 @@ async function generate(attrs = {}) {
 		xml('image', {
 			href: `data:image/jpeg;base64,${mapJpgB64}`
 		}),
+		...gridsXT,
+		...gridsXB,
+		...gridsYL,
+		...gridsYR,
 		...markers.flat()
 	]);
 };
