@@ -106,15 +106,15 @@ async function generate(attrs = {}) {
 	for (const x of xList) {
 		const p = (x * markerW) + (markerW / 2) + gridX;
 		for (const [grids, y, db] of [
-			[gridsXT, gridPad, 'text-before-edge'],
-			[gridsXB, height - gridPad, 'text-after-edge']
+			[gridsXT, gridPad, 'hanging'],
+			[gridsXB, height - (gridPad + fontSize / 6), null]
 		]) {
 			grids.push(xml('text', {
 				class: 'map-grid-label',
 				x: Math.round(p),
 				y,
-				'dominant-baseline': db,
-				'text-anchor': 'middle'
+				'text-anchor': 'middle',
+				...(db === null ? {} : {'dominant-baseline': db})
 			}, escapeXml(x < 0 ? '-' : x)));
 		}
 	}
@@ -128,8 +128,8 @@ async function generate(attrs = {}) {
 				class: 'map-grid-label',
 				x,
 				y: Math.round(p),
-				'dominant-baseline': 'middle',
-				'text-anchor': ta
+				'text-anchor': ta,
+				'dominant-baseline': 'middle'
 			}, escapeXml(y < 0 ? '-' : y)));
 		}
 	}
