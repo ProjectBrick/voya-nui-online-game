@@ -51,7 +51,7 @@ This module contains the following debug commands:
 | `level number`  | Increase level to the specified `number` (`1`-`50`).                                                                                                                                         |
 | `move id`       | Move to specified [map](#maps) `id`.                                                                                                                                                         |
 | `move x,y`      | Move to specified [map](#maps) `x` and `y`.                                                                                                                                                  |
-| `random a b`    | Generate random number from `a` to `b`-`1`.                                                                                                                                                  |
+| `random a b`    | Generate random number from `a` to `b-1`.                                                                                                                                                    |
 | `itemlist`      | For listing inventory and equipped inventory, not working.                                                                                                                                   |
 | `gimmy`         | Gives the player `1` of every item in the game.                                                                                                                                              |
 | `equip id`      | Add to inventory `1` of [item](#items) `id`.                                                                                                                                                 |
