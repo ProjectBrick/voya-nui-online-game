@@ -68,7 +68,11 @@ async function readMaps() {
 async function generate(attrs = {}) {
 	const mapJpg = `${__dirname}/map.jpg`;
 	const mapJpgB64 = await fse.readFile(mapJpg, 'base64');
-	const {width, height} = await imageSizeP(mapJpg);
+	const mapJpgSize = await imageSizeP(mapJpg);
+	const width = mapJpgSize.width - 4;
+	const height = mapJpgSize.height - 3;
+	const offsetX = 2;
+	const offsetY = 2;
 	const markerW = 20.2;
 	const markerH = 14.4;
 	const gridX = 86;
@@ -220,7 +224,9 @@ async function generate(attrs = {}) {
 			})
 		]),
 		xml('image', {
-			href: `data:image/jpeg;base64,${mapJpgB64}`
+			href: `data:image/jpeg;base64,${mapJpgB64}`,
+			x: -offsetX,
+			y: -offsetY
 		}),
 		...gridsXT,
 		...gridsXB,
