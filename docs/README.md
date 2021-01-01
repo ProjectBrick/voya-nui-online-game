@@ -33,34 +33,34 @@ In the debug console, the following commands can be entered.
 
 This module contains the following debug commands:
 
-| Command         | Action                                                                                                                                                                         |
-| :-------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `info`          | Shows Web Service Path, Asset Path, and Chapters Available.                                                                                                                    |
-| `where`         | Shows character name, map number, cell number, and the number of monsters.                                                                                                     |
-| `build`         | Shows the build number.                                                                                                                                                        |
-| `anim name`     | Play the specified player [animation `name`](#animations).                                                                                                                     |
-| `skin id`       | Change player skin to [sprite `id`](#sprites) (not all skins have all animations).                                                                                             |
-| `nextstep`      | Skip to next quest.                                                                                                                                                            |
-| `onemorenight`  | Adds 1 to chapters available (all chapters are already available).                                                                                                             |
-| `step id`       | Move to corresponding [quest `id`](#quests).                                                                                                                                   |
-| `chapter id`    | Move to corresponding [chapter `id`](#chapters).                                                                                                                               |
-| `god`           | Toggle monsters will attack.                                                                                                                                                   |
-| `script name`   | Run the specified [script `name`](#scripts).                                                                                                                                   |
-| `cancel`        | Abandon fight.                                                                                                                                                                 |
-| `pieceofcake`   | Add to inventory 1 Life Stone, 1 Nui Blaster, 1 Medium Attack Greaves of Air, 1 Medium Attack Armor of Air, 1 Attack Noble Kanohi of Air, 1 Thok Key, and 3 Hidden Caves Keys. |
-| `level number`  | Increase level to the specified `number` (`1`-`50`).                                                                                                                           |
-| `move id`       | Move to specified [map `id`](#maps).                                                                                                                                           |
-| `move x,y`      | Move to specified [map `x` and `y`](#maps).                                                                                                                                    |
-| `random a b`    | Generate random number from `a` to `b-1`.                                                                                                                                      |
-| `itemlist`      | For listing inventory and equipped inventory, not working.                                                                                                                     |
-| `gimmy`         | Gives the player 1 of every item in the game.                                                                                                                                  |
-| `equip id`      | Add to inventory 1 of [item `id`](#items).                                                                                                                                     |
-| `equip id slot` | Add to inventory 1 of [item `id`](#items) and equip to `slot` (`0`: 2nd, `1`: 3rd, `2`: 4th).                                                                                  |
-| `spell`         | Shows the equipped items.                                                                                                                                                      |
-| `spell slot`    | Shows info about item equipped to `slot` (`1`: 1st, `2`: 2nd, `3`: 3rd, `4`: 4th).                                                                                             |
-| `spell slot id` | Equip to `slot` (`1`: 1st, `2`: 2nd, `3`: 3rd, `4`: 4th) a [spell `id`](#spells) (not all spells have an icon).                                                                |
-| `fight`         | Toggle between combat and roleplay modes.                                                                                                                                      |
-| `makemerich`    | Add to inventory 10 of stone, earth, water, ice, fire, and air shards.                                                                                                         |
+| Command         | Action                                                                                                                                                                                       |
+| :-------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `info`          | Shows web service path, asset path, and chapters available.                                                                                                                                  |
+| `where`         | Shows character name, map number, cell number, and the number of monsters.                                                                                                                   |
+| `build`         | Shows the build number.                                                                                                                                                                      |
+| `anim name`     | Play the specified player [animation](#animations) `name`.                                                                                                                                   |
+| `skin id`       | Change player skin to [sprite](#sprites) `id` (not all skins have all animations).                                                                                                           |
+| `nextstep`      | Skip to next quest.                                                                                                                                                                          |
+| `onemorenight`  | Adds `1` to chapters available (all chapters are already available).                                                                                                                         |
+| `step id`       | Move to corresponding [quest](#quests) `id`.                                                                                                                                                 |
+| `chapter id`    | Move to corresponding [chapter](#chapters) `id`.                                                                                                                                             |
+| `god`           | Toggle monsters will attack.                                                                                                                                                                 |
+| `script name`   | Run the specified [script](#scripts) `name`.                                                                                                                                                 |
+| `cancel`        | Abandon fight.                                                                                                                                                                               |
+| `pieceofcake`   | Add to inventory `1` Life Stone, `1` Nui Blaster, `1` Medium Attack Greaves of Air, `1` Medium Attack Armor of Air, `1` Attack Noble Kanohi of Air, `1` Thok Key, and `3` Hidden Caves Keys. |
+| `level number`  | Increase level to the specified `number` (`1`-`50`).                                                                                                                                         |
+| `move id`       | Move to specified [map](#maps) `id`.                                                                                                                                                         |
+| `move x,y`      | Move to specified [map](#maps) `x` and `y`.                                                                                                                                                  |
+| `random a b`    | Generate random number from `a` to `b`-`1`.                                                                                                                                                  |
+| `itemlist`      | For listing inventory and equipped inventory, not working.                                                                                                                                   |
+| `gimmy`         | Gives the player `1` of every item in the game.                                                                                                                                              |
+| `equip id`      | Add to inventory `1` of [item](#items) `id`.                                                                                                                                                 |
+| `equip id slot` | Add to inventory `1` of [item](#items) `id` and equip to `slot` (`0`: 2nd, `1`: 3rd, `2`: 4th).                                                                                              |
+| `spell`         | Shows the equipped items.                                                                                                                                                                    |
+| `spell slot`    | Shows info about item equipped to `slot` (`1`: 1st, `2`: 2nd, `3`: 3rd, `4`: 4th).                                                                                                           |
+| `spell slot id` | Equip to `slot` (`1`: 1st, `2`: 2nd, `3`: 3rd, `4`: 4th) a [spell](#spells) `id` (not all spells have an icon).                                                                              |
+| `fight`         | Toggle between combat and roleplay modes.                                                                                                                                                    |
+| `makemerich`    | Add to inventory `10` of stone, earth, water, ice, fire, and air shards.                                                                                                                     |
 
 
 ### Module: `ui`
@@ -70,8 +70,8 @@ This module contains the following debug commands:
 | Command               | Action                                                                                                                                                    |
 | :-------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `msgbox text title`   | Show a message dialog with the specified `text` and `title`.                                                                                              |
-| `msg text type`       | Show message the the specified `text` and `type` (1: white, 2: red).                                                                                      |
-| `sa id name`          | Set sprite animation command [sprite `id`](#sprites) and [animation `name`](#animations).                                                                 |
+| `msg text type`       | Show message the the specified `text` and `type` (`1`: white, `2`: red).                                                                                  |
+| `sa id name`          | Set sprite animation command [sprite](#sprites) `id` and [animation](#animations) `name`.                                                                 |
 | `open name`           | Open specified menu `name` (`MainMenu`, `Banner`, `Cinematic`, `ChooseCharacter`, `Timeline`, `Map`, `Quests`, `CenterText`, `InventoryStats`, `Dialog`). |
 | `hb button`           | Highlight `button` (`1`-`3`).                                                                                                                             |
 
@@ -82,8 +82,8 @@ This module contains the following debug commands:
 
 | Command      | Action                                        |
 | :----------- | :-------------------------------------------- |
-| `sound name` | Play [sound `name`](#audio-sounds).           |
-| `event name` | Play [event `name`](#audio-events).           |
+| `sound name` | Play [sound](#audio-sounds) `name`.           |
+| `event name` | Play [event](#audio-events) `name`.           |
 
 
 ### Module: `worker`
