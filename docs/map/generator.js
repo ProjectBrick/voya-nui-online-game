@@ -73,10 +73,10 @@ async function generate(attrs = {}) {
 	const height = mapJpgSize.height - 3;
 	const offsetX = 2;
 	const offsetY = 2;
-	const markerW = 20.2;
+	const markerW = 20.33;
 	const markerH = 14.4;
-	const gridX = 86;
-	const gridY = 44;
+	const gridX = 84 - offsetX;
+	const gridY = 44 - offsetY;
 	const fontSize = 12;
 
 	const positions = new Map();
@@ -98,7 +98,7 @@ async function generate(attrs = {}) {
 	const xList = [...xs].sort((a, b) => a - b);
 	const yList = [...ys].sort((a, b) => a - b);
 
-	const gridPad = 2;
+	const gridPad = 3;
 	const gridsXT = [];
 	const gridsXB = [];
 	const gridsYL = [];
@@ -107,7 +107,7 @@ async function generate(attrs = {}) {
 		const p = (x * markerW) + (markerW / 2) + gridX;
 		for (const [grids, y, db] of [
 			[gridsXT, gridPad, 'hanging'],
-			[gridsXB, height - (gridPad + fontSize / 6), null]
+			[gridsXB, height - (gridPad + (fontSize / 12)), null]
 		]) {
 			grids.push(xml('text', {
 				class: 'map-grid-label',
@@ -169,7 +169,7 @@ async function generate(attrs = {}) {
 				xml('text', {
 					class: 'map-marker-label',
 					x: Math.round(textX),
-					y: Math.round(pY - (fontSize / 3)),
+					y: Math.round(pY - (fontSize / 6)),
 					'text-anchor': textAnchor
 				}, escapeXml(toRanges(ids).join(' ')))
 			];
