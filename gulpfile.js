@@ -28,7 +28,8 @@ const {
 	BundleWindows32,
 	BundleMacApp,
 	BundleLinux32,
-	BundleLinux64
+	BundleLinux64,
+	loader
 } = require('@shockpkg/swf-projector');
 
 const {
@@ -289,11 +290,23 @@ async function makeDmg(target, specification) {
 	});
 }
 
-async function bundle(bundle, pkg) {
-	await bundle.withFile(
+async function bundle(bundle, pkg, delay = false) {
+	await bundle.withData(
 		await shockpkgFile(pkg),
-		'src/projector/voyanuionlinegame.swf',
+		loader(
+			8,
+			742,
+			556,
+			20,
+			0x000000,
+			'voyanuionlinegame.swf',
+			delay ? 20 / 2 : 0
+		),
 		async b => {
+			await b.copyResourceFile(
+				'voyanuionlinegame.swf',
+				'src/projector/voyanuionlinegame.swf'
+			);
 			await readSourcesFiltered(async entry => {
 				await b.createResourceFile(entry.path, await entry.read());
 			});
@@ -433,14 +446,14 @@ async function buildMac(dir, pkg) {
 async function buildLinux32(dir, pkg) {
 	const dest = `build/${dir}`;
 	await fse.remove(dest);
-	await bundle(await createBundleLinux32(`${dest}/${appName}`), pkg);
+	await bundle(await createBundleLinux32(`${dest}/${appName}`), pkg, true);
 	await addDocs(dest);
 }
 
 async function buildLinux64(dir, pkg) {
 	const dest = `build/${dir}`;
 	await fse.remove(dest);
-	await bundle(await createBundleLinux64(`${dest}/${appName}`), pkg);
+	await bundle(await createBundleLinux64(`${dest}/${appName}`), pkg, true);
 	await addDocs(dest);
 }
 
