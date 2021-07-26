@@ -14,7 +14,6 @@ voyanuionlinegame.swf:
 		voyanuionlinegame.as
 	swfcombine \
 		-v \
-		-z \
 		-m \
 		-l \
 		-o voyanuionlinegame.swf \
