@@ -35,7 +35,7 @@ import {
 import {
 	SourceZip,
 	SourceDir
-} from './util/sources.mjs';
+} from './util/source.mjs';
 import {generate} from './docs/map/generator.mjs';
 
 const {
