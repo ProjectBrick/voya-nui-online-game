@@ -1,11 +1,13 @@
-'use strict';
+import {fileURLToPath} from 'url';
+import path from 'path';
+import util from 'util';
 
-const util = require('util');
-
-const fse = require('fs-extra');
-const imageSize = require('image-size');
+import fse from 'fs-extra';
+import imageSize from 'image-size';
 
 const imageSizeP = util.promisify(imageSize);
+
+const basedir = path.dirname(fileURLToPath(import.meta.url));
 
 function toRanges(numbers) {
 	const numbersSorted = numbers.slice().sort((a, b) => a - b);
@@ -61,12 +63,12 @@ function xml(tag, attrs = {}, content = null) {
 }
 
 async function readMaps() {
-	const code = await fse.readFile(`${__dirname}/maps.as`, 'utf8');
+	const code = await fse.readFile(`${basedir}/maps.as`, 'utf8');
 	return Function(`'use strict';var M;${code};return M;`)();
 }
 
-async function generate(attrs = {}) {
-	const mapJpg = `${__dirname}/map.jpg`;
+export async function generate(attrs = {}) {
+	const mapJpg = `${basedir}/map.jpg`;
 	const mapJpgB64 = await fse.readFile(mapJpg, 'base64');
 	const mapJpgSize = await imageSizeP(mapJpg);
 	const width = mapJpgSize.width - 4;
@@ -236,19 +238,3 @@ async function generate(attrs = {}) {
 		...markers.flat()
 	]);
 };
-exports.generate = generate;
-
-async function main() {
-	const args = process.argv.slice(2);
-	if (!args.length) {
-		throw new Error('Arguments: svg');
-	}
-	const [svg] = args;
-	await fse.outputFile(svg, await generate());
-}
-if (!module.parent) {
-	main().catch(err => {
-		process.exitCode = 1;
-		console.error(err);
-	});
-}
