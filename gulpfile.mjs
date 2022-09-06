@@ -1,6 +1,5 @@
 import fse from 'fs-extra';
 import gulp from 'gulp';
-import {marked} from 'marked';
 import {Manager} from '@shockpkg/core';
 import {
 	Plist,
@@ -26,6 +25,7 @@ import {
 	readIco,
 	readIcns
 } from './util/image.mjs';
+import {docs} from './util/doc.mjs';
 import {
 	makeZip,
 	makeTgz,
@@ -120,30 +120,10 @@ async function readSourcesFiltered(each) {
 }
 
 async function addDocs(dir) {
-	const template = await fse.readFile('docs/template.html', 'utf8');
 	const mapHtml = await generate({
 		style: 'display: block; max-width: 100%; height: auto; margin: 0 auto;'
 	});
-	await Promise.all((await fse.readdir('docs'))
-		.filter(f => /^[^\.].*\.md$/i.test(f))
-		.map(f => fse.readFile(`docs/${f}`, 'utf8').then(src => {
-			const body = marked(src, {
-				gfm: true,
-				breaks: true,
-				smartypants: true
-			}).trim();
-			const title = (
-				body.match(/<h\d[^>]*>([\s\S]*?)<\/h\d>/) || []
-			)[1] || '';
-			return fse.writeFile(
-				`${dir}/${f}`.replace(/\.md$/i, '.html'),
-				templateStrings(template, {
-					title,
-					body
-				}).replace(/<!--{MAP}-->/g, mapHtml)
-			);
-		}))
-	);
+	await docs('docs', dir, [[/<!--{MAP}-->/g, mapHtml]]);
 }
 
 async function bundle(bundle, pkg, delay = false) {
