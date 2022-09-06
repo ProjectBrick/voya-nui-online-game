@@ -262,35 +262,35 @@ async function buildBrowser(dir, nested) {
 			'<meta http-equiv="refresh" content="0;url=data/index.html">\n'
 		);
 	}
-	await addDocs(dest);
+	await docs('docs', dest);
 }
 
 async function buildWindows(dir, pkg) {
 	const dest = `build/${dir}`;
 	await fse.remove(dest);
 	await bundle(await createBundleWindows(`${dest}/${appName}.exe`), pkg);
-	await addDocs(dest);
+	await docs('docs', dest);
 }
 
 async function buildMac(dir, pkg) {
 	const dest = `build/${dir}`;
 	await fse.remove(dest);
 	await bundle(await createBundleMac(`${dest}/${appName}.app`), pkg);
-	await addDocs(dest);
+	await docs('docs', dest);
 }
 
 async function buildLinux32(dir, pkg) {
 	const dest = `build/${dir}`;
 	await fse.remove(dest);
 	await bundle(await createBundleLinux32(`${dest}/${appName}`), pkg, true);
-	await addDocs(dest);
+	await docs('docs', dest);
 }
 
 async function buildLinux64(dir, pkg) {
 	const dest = `build/${dir}`;
 	await fse.remove(dest);
 	await bundle(await createBundleLinux64(`${dest}/${appName}`), pkg, true);
-	await addDocs(dest);
+	await docs('docs', dest);
 }
 
 gulp.task('clean', async () => {
