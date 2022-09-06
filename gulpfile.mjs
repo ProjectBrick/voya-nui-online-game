@@ -36,7 +36,10 @@ import {
 } from './util/sources.mjs';
 import {Server} from './util/server.mjs';
 import {generate} from './docs/map/generator.mjs';
+
 const {
+	appName,
+	appDomain,
 	version,
 	author,
 	copyright
@@ -46,8 +49,6 @@ const pipelineP = util.promisify(stream.pipeline);
 const imageSizeP = util.promisify(imageSize);
 const innosetupP = util.promisify(innosetup);
 
-const appName = 'Voya Nui Online Game';
-const appDomain = 'io.github.projectbrick.VoyaNuiOnlineGame';
 const distName = slugify(`${appName} ${version}`);
 const versionShort = version.split('.').slice(0, 2).join('.');
 const serverPort = +process.env.SERVER_PORT;
