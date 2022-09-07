@@ -1,13 +1,8 @@
 import {fileURLToPath} from 'url';
-import path from 'path';
-import util from 'util';
+import {dirname} from 'path';
+import {readFile} from 'fs/promises';
 
-import fse from 'fs-extra';
-import imageSize from 'image-size';
-
-const imageSizeP = util.promisify(imageSize);
-
-const basedir = path.dirname(fileURLToPath(import.meta.url));
+const basedir = dirname(fileURLToPath(import.meta.url));
 
 function toRanges(numbers) {
 	const numbersSorted = numbers.slice().sort((a, b) => a - b);
@@ -63,14 +58,17 @@ function xml(tag, attrs = {}, content = null) {
 }
 
 async function readMaps() {
-	const code = await fse.readFile(`${basedir}/maps.as`, 'utf8');
+	const code = await readFile(`${basedir}/maps.as`, 'utf8');
 	return Function(`'use strict';var M;${code};return M;`)();
 }
 
-export async function generate(attrs = {}) {
+export async function map(attrs = {}) {
 	const mapJpg = `${basedir}/map.jpg`;
-	const mapJpgB64 = await fse.readFile(mapJpg, 'base64');
-	const mapJpgSize = await imageSizeP(mapJpg);
+	const mapJpgB64 = await readFile(mapJpg, 'base64');
+	const mapJpgSize = {
+		width: 740,
+		height: 469
+	};
 	const width = mapJpgSize.width - 4;
 	const height = mapJpgSize.height - 3;
 	const offsetX = 2;
