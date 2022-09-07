@@ -38,7 +38,7 @@ async function * readSources(sources) {
 	const m = new Map();
 	for (const source of sources) {
 		for (const [path, read] of source.itter()) {
-			m.set(p = path.toLowerCase(), [path, read]);
+			m.set(path.toLowerCase(), [path, read]);
 		}
 	}
 	for (const id of [...m.keys()].sort()) {
