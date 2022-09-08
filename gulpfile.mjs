@@ -30,30 +30,16 @@ import {pngs2bmps, readIco, readIcns} from './util/image.mjs';
 import {docs} from './util/doc.mjs';
 import {makeZip, makeTgz, makeExe, makeDmg} from './util/dist.mjs';
 import {templateStrings} from './util/string.mjs';
-import {SourceZip, SourceDir} from './util/source.mjs';
+import {SourceZip, SourceDir, readSources} from './util/source.mjs';
 import {map} from './docs/map/map.mjs';
 
-async function * readSources(sources) {
-	await Promise.all(sources.map(s => s.open()));
-	const m = new Map();
-	for (const source of sources) {
-		for (const [path, read] of source.itter()) {
-			m.set(path.toLowerCase(), [path, read]);
-		}
-	}
-	for (const id of [...m.keys()].sort()) {
-		yield m.get(id);
-	}
-	await Promise.all(sources.map(s => s.close()));
-}
-
-async function * readSourcesFiltered() {
+async function * files() {
 	for await (const [file, read] of readSources([
 		new SourceDir('mod/1.0.2'),
 		new SourceZip('original/1.0.2/voyanuirpg.zip', 'voyanuirpg/')
 	])) {
 		if (/\.(swf|xml)$/i.test(file)) {
-			yield [file, read];
+			yield [file, await read()];
 		}
 	}
 }
@@ -75,20 +61,20 @@ async function bundle(bundle, pkg, delay = false) {
 		await (new Manager()).with(m => m.packageInstallFile(pkg)),
 		loader(swfv, w, h, fps, bg, url, delay ? Math.round(fps / 2) : 0),
 		async b => {
+			for await (const [file, data] of files()) {
+				await b.createResourceFile(file, data);
+			}
 			await b.copyResourceFile(
 				'voyanuionlinegame.swf',
 				'src/projector/voyanuionlinegame.swf'
 			);
-			for await (const [file, read] of readSourcesFiltered()) {
-				await b.createResourceFile(file, await read());
-			}
 		}
 	);
 }
 
 async function browser(dest) {
-	for await (const [file, read] of readSourcesFiltered()) {
-		await fse.outputFile(`${dest}/${file}`, await read());
+	for await (const [file, data] of files()) {
+		await fse.outputFile(`${dest}/${file}`, data);
 	}
 	await Promise.all([
 		'voyanuionlinegame.swf',
