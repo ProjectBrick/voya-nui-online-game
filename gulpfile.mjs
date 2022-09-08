@@ -31,7 +31,6 @@ import {docs} from './util/doc.mjs';
 import {makeZip, makeTgz, makeExe, makeDmg} from './util/dist.mjs';
 import {templateStrings} from './util/string.mjs';
 import {SourceZip, SourceDir, readSources} from './util/source.mjs';
-import {map} from './docs/map/map.mjs';
 
 async function * files() {
 	for await (const [file, read] of readSources([
@@ -42,13 +41,6 @@ async function * files() {
 			yield [file, await read()];
 		}
 	}
-}
-
-async function addDocs(dir) {
-	const mapHtml = await map({
-		style: 'display: block; max-width: 100%; height: auto; margin: 0 auto;'
-	});
-	await docs('docs', dir, [[/<!--{MAP}-->/g, mapHtml]]);
 }
 
 async function bundle(bundle, pkg, delay = false) {
@@ -103,7 +95,7 @@ gulp.task('build:pages', async () => {
 	const dest = 'build/pages';
 	await fse.remove(dest);
 	await browser(dest);
-	await addDocs(dest);
+	await docs('docs', dest);
 });
 
 gulp.task('build:browser', async () => {
@@ -114,7 +106,7 @@ gulp.task('build:browser', async () => {
 		`${dest}/${appFile}.html`,
 		'<meta http-equiv="refresh" content="0;url=data/index.html">\n'
 	);
-	await addDocs(dest);
+	await docs('docs', dest);
 });
 
 gulp.task('build:windows', async () => {
@@ -138,7 +130,7 @@ gulp.task('build:windows', async () => {
 	b.projector.patchWindowTitle = appName;
 	b.projector.removeCodeSignature = true;
 	await bundle(b, 'flash-player-32.0.0.465-windows-sa-debug');
-	await addDocs(dest);
+	await docs('docs', dest);
 });
 
 gulp.task('build:mac', async () => {
@@ -180,7 +172,7 @@ gulp.task('build:mac', async () => {
 	b.projector.removeInfoPlistStrings = true;
 	b.projector.removeCodeSignature = true;
 	await bundle(b, 'flash-player-32.0.0.465-mac-sa-debug-zip');
-	await addDocs(dest);
+	await docs('docs', dest);
 });
 
 gulp.task('build:linux-i386', async () => {
@@ -190,7 +182,7 @@ gulp.task('build:linux-i386', async () => {
 	b.projector.patchProjectorPath = true;
 	b.projector.patchWindowTitle = appName;
 	await bundle(b, 'flash-player-11.2.202.644-linux-i386-sa-debug', true);
-	await addDocs(dest);
+	await docs('docs', dest);
 });
 
 gulp.task('build:linux-x86_64', async () => {
@@ -201,7 +193,7 @@ gulp.task('build:linux-x86_64', async () => {
 	b.projector.patchProjectorOffset = true;
 	b.projector.patchWindowTitle = appName;
 	await bundle(b, 'flash-player-32.0.0.465-linux-x86_64-sa-debug', true);
-	await addDocs(dest);
+	await docs('docs', dest);
 });
 
 gulp.task('dist:browser:zip', async () => {
