@@ -2,7 +2,7 @@
 	"private": true,
 	"appName": "Voya Nui Online Game",
 	"appDomain": "io.github.projectbrick.VoyaNuiOnlineGame",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"author": "Project Brick",
 	"copyright": "Copyright 2006 The LEGO Group and Ankama Studio. Unofficial release by Project Brick.",
 	"optionalDependencies": {
