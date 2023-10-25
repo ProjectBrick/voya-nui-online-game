@@ -1,4 +1,4 @@
-# Voya Nui Online Game -- README
+# Voya Nui Online Game – README
 
 Explore a mysterious new island and challenge dangerous enemies in an all-new, all-different BIONICLE online game!
 
